@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A1D2_CASUS.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,15 +9,18 @@ namespace A1D2_CASUS.Model
 {
     public class Student
     {
+        StudentDAO db = new StudentDAO();
+
         public int Id { get; set; }
         public string Name { get; set; }
-        public string StudentNumber { get; set; }
+        public int StudentNumber { get; set; }
         public string Password { get; set; }
         public List<Outfit> Outfits { get; set; }
         public int XP { get; set; }
         public int Level { get; set; }
+        public int Points { get; set; }
 
-        public Student(int id, string name, string studentNumber, string password, List<Outfit> outfits, int xP)
+        public Student(int id, string name, int studentNumber, string password, List<Outfit> outfits, int xP, int points)
         {
             Id = id;
             Name = name;
@@ -25,6 +29,22 @@ namespace A1D2_CASUS.Model
             Outfits = outfits;
             XP = xP;
             Level = xP / 5;
+            Points = points;
+        }
+
+        public List<Student> Read()
+        {
+            return db.Read();
+        }
+
+        public Student Search(int id)
+        {
+            return db.Search(id);
+        }
+
+        public bool UnlockOutfit(Student student, Outfit outfit)
+        {
+            return db.UnlockOutfit(this, outfit);
         }
     }
 }
