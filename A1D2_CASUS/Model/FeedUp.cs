@@ -13,6 +13,8 @@ namespace A1D2_CASUS.Model
         public int Priority { get; set; }
         public string Reflection { get; set; }
 
+        public FeedUp() { }
+
         public FeedUp(int id, FeedBase feed, int priority, string reflection)
         {
             Id = id;

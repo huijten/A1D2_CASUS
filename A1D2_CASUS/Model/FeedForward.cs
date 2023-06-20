@@ -12,6 +12,7 @@ namespace A1D2_CASUS.Model
         public FeedBase Feed { get; set; }
         public string Notes { get; set; }
 
+        public FeedForward() { }
         public FeedForward(int id, FeedBase feed, string notes)
         {
             Id = id;

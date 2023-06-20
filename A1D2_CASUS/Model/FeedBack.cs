@@ -9,13 +9,14 @@ namespace A1D2_CASUS.Model
     public class FeedBack
     {
         public int Id { get; set; }
-        public FeedBase feed { get; set; }
+        public FeedBase Feed { get; set; }
         public string Notes { get; set; }
 
+        public FeedBack() { }
         public FeedBack(int id, FeedBase feed, string notes)
         {
             Id = id;
-            this.feed = feed;
+            Feed = feed;
             Notes = notes;
         }
     }

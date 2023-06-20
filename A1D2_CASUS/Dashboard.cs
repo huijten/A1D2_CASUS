@@ -12,7 +12,12 @@ namespace A1D2_CASUS
 
             List<Student> students = db.Read();
 
-            string[] properties = { students[0].Id.ToString(), students[0].Name, students[0].StudentNumber.ToString(), students[0].Password, students[0].Outfits[0].Name, students[0].XP.ToString(), students[0].Level.ToString(), students[0].Points.ToString() };
+            string[] properties = { students[0].Id.ToString(), students[0].Name, 
+                students[0].StudentNumber.ToString(), students[0].Password, 
+                students[0].Outfits[0].Id.ToString(), students[0].Outfits[0].Name, 
+                students[0].Outfits[0].Description, students[0].Outfits[0].ImageURL,
+                students[0].Outfits[0].Cost.ToString(), students[0].XP.ToString(),
+                students[0].Level.ToString(), students[0].Points.ToString() };
            
             label1.Text = string.Join("\n", properties);
         }
