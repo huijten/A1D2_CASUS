@@ -13,7 +13,7 @@ namespace A1D2_CASUS.DAO
         private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
 
         #region Getting all FeedUps from database
-        public List<FeedBack> Read()
+        public List<FeedUp> Read()
         {
             List<FeedUp> feedups = new List<FeedUp>();
 
@@ -48,5 +48,4 @@ namespace A1D2_CASUS.DAO
         }
     }
     #endregion
-}
 }
