@@ -10,7 +10,12 @@ namespace A1D2_CASUS.DAO
 {
     public class SupervisorDAO
     {
+        //Kevin
         private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
+        //Ruben
+        //private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
+        //Wien
+        //private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
 
         public Supervisor Search(int supervisorId)
         {

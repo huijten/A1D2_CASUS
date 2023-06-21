@@ -12,7 +12,7 @@ namespace A1D2_CASUS.DAO
     public class StudentDAO
     {
 
-        private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
+        private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
 
         #region Getting all students from database
         public List<Student> Read()

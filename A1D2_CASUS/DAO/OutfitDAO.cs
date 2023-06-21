@@ -10,7 +10,7 @@ namespace A1D2_CASUS.DAO
 {
     public class OutfitDAO
     {
-        private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
+        private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
 
         #region Getting all Outfits from database
         public List<Outfit> Read()
