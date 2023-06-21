@@ -20,6 +20,7 @@ namespace A1D2_CASUS.Model
         public int Level { get; set; }
         public int Points { get; set; }
 
+        public Student() { }
         public Student(int id, string name, int studentNumber, string password, List<Outfit> outfits, int xP, int points)
         {
             Id = id;

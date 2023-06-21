@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace A1D2_CASUS.DAO
 {
-    public class FeedBackDAO
+    public class FeedForwardDAO
     {
         private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
 
-        #region Getting all Feedbacks from database
-        public List<FeedBack> Read()
+        #region Getting all FeedForwards from database
+        public List<FeedForward> Read()
         {
-            List<FeedBack> feedbacks = new List<FeedBack>();
+            List<FeedForward> feedforwards = new List<FeedForward>();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                string query = "SELECT Id, Feed, Notes FROM FeedBack";
+                string query = "SELECT Id, Feed, Notes FROM FeedForward";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -29,22 +29,23 @@ namespace A1D2_CASUS.DAO
                     {
                         while (reader.Read())
                         {
-                            int feedbackId = reader.GetInt32(0);
+                            int id = reader.GetInt32(0);
                             int feedBaseId = reader.GetInt32(1);
                             string notes = reader.GetString(2);
 
                             // Get FeedBase by FeedId                            
                             FeedBase feed = new FeedBase();
 
-                            FeedBack feedback = new FeedBack(feedbackId, feed.Search(feedBaseId), notes);
-                            feedbacks.Add(feedback);
+                            FeedForward feedforward = new FeedForward(id, feed.Search(feedBaseId), notes);
+                            feedforwards.Add(feedforward);
                         }
                     }
                 }
             }
 
-            return feedbacks;
+            return feedforwards;
         }
     }
     #endregion
+}
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A1D2_CASUS.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -9,6 +10,7 @@ namespace A1D2_CASUS.Model
 {
     public class FeedBase
     {
+        FeedBaseDAO db = new FeedBaseDAO();
         public int Id { get; set; }
         public DateTime CreationDate { get; set; }
         public Supervisor ApprovedBy { get; set; }
@@ -16,6 +18,20 @@ namespace A1D2_CASUS.Model
         public Student Student { get; set; }
         public string Content { get; set; }
 
-        
+        public FeedBase() { }
+        public FeedBase(int id, DateTime creationDate, Supervisor approvedBy, Assignment assignment, Student student, string content)
+        {
+            Id = id;
+            CreationDate = creationDate;
+            ApprovedBy = approvedBy;
+            Assignment = assignment;
+            Student = student;
+            Content = content;
+        }
+
+        public FeedBase Search(int id)
+        {
+            return db.Search(id);
+        }
     }
 }
