@@ -28,32 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            childFormPanel = new Panel();
             SuspendLayout();
             // 
-            // label1
+            // childFormPanel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(302, 135);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            childFormPanel.Location = new Point(12, 12);
+            childFormPanel.Name = "childFormPanel";
+            childFormPanel.Size = new Size(1050, 521);
+            childFormPanel.TabIndex = 0;
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            ClientSize = new Size(1074, 545);
+            Controls.Add(childFormPanel);
             Name = "Dashboard";
             Text = "Form1";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Panel childFormPanel;
     }
 }
