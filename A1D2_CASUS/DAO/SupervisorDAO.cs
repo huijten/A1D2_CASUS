@@ -43,7 +43,6 @@ namespace A1D2_CASUS.DAO
 
                             supervisors.Add(supervisor);
                         }
-
                         return supervisors.FirstOrDefault(); // Return the first student found (or null if not found)
                     }
                 }

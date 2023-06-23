@@ -9,28 +9,27 @@ namespace A1D2_CASUS
         {
             InitializeComponent();
 
-
-            // Uncomment welke je wilt laten zien
-            OpenChildForm(new LoginView());
+        // Uncomment welke je wilt laten zien
+        OpenChildForm(new LoginView());
 
             //OpenChildForm(new RegisterView());
 
         }
 
-        public Form activeForm = null;
+    public Form activeForm = null;
 
-        public void OpenChildForm(Form childForm)
+    public void OpenChildForm(Form childForm)
+    {
+        if (activeForm != null)
         {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childFormPanel.Controls.Add(childForm);
-            childForm.Dock = DockStyle.Fill;
-            childForm.BringToFront();
-            childForm.Show();
+            activeForm.Close();
         }
+        activeForm = childForm;
+        childForm.TopLevel = false;
+        childFormPanel.Controls.Add(childForm);
+        childForm.Dock = DockStyle.Fill;
+        childForm.BringToFront();
+        childForm.Show();
     }
+}
 }
