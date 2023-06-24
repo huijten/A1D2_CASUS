@@ -141,7 +141,7 @@ namespace A1D2_CASUS.DAO
         #endregion
 
         #region Unlock Outfit
-        public bool UnlockOutfit(Student student, Outfit outfit)
+        public void UnlockOutfit(Student student, Outfit outfit)
         {
             if (student.Points >= outfit.Cost)
             {
@@ -169,11 +169,11 @@ namespace A1D2_CASUS.DAO
                         student.Outfits.Add(outfit);  // Add the outfit to the student's collection
                         student.Points -= outfit.Cost;  // Deduct the outfit cost from the student's XP
 
-                        return true;  // Outfit unlocked successfully
+
                     }
                 }
             }
-            return false;  // Not enough XP to unlock the outfit
+
         }
         #endregion
     }

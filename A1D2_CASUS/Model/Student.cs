@@ -43,9 +43,9 @@ namespace A1D2_CASUS.Model
             return db.Search(id);
         }
 
-        public bool UnlockOutfit(Student student, Outfit outfit)
+        public void UnlockOutfit(Student student, Outfit outfit)
         {
-            return db.UnlockOutfit(this, outfit);
+            db.UnlockOutfit(this, outfit);
         }
     }
 }

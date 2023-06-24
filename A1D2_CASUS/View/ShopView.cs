@@ -22,6 +22,7 @@ namespace A1D2_CASUS.View
 
         public void FillPanel()
         {
+            Student studentdb = new Student();
             Outfit db = new Outfit();
             List<Outfit> outfits = db.Read();
 
@@ -54,6 +55,11 @@ namespace A1D2_CASUS.View
                 containerPanel.Location = new Point(i * 225, 0);
 
                 ItemShopPanel.Controls.Add(containerPanel);
+                button.Click += (sender, e) =>
+                {
+                    MessageBox.Show($"IT WORKS! {outfit.Name}");
+                    //studentdb.UnlockOutfit(UserSession.Session, outfit);
+                };
             }
         }
     }
