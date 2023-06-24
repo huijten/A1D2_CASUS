@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace A1D2_CASUS.View
 {
-    public partial class RegisterView : Form
+    public partial class DashboardView : Form
     {
-        public RegisterView()
+        public DashboardView()
         {
             InitializeComponent();
         }

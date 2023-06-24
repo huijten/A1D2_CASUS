@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ShopView";
+            label1 = new Label();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(290, 152);
+            label1.Name = "label1";
+            label1.Size = new Size(318, 86);
+            label1.TabIndex = 0;
+            label1.Text = "ShopView";
+            // 
+            // ShopView
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(929, 431);
+            Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "ShopView";
+            Text = "ShopView";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
     }
 }

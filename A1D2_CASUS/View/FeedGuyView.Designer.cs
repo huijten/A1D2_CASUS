@@ -1,6 +1,6 @@
 ﻿namespace A1D2_CASUS.View
 {
-    partial class RegisterView
+    partial class FeedGuyView
     {
         /// <summary>
         /// Required designer variable.
@@ -35,21 +35,21 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(325, 206);
+            label1.Location = new Point(267, 156);
             label1.Name = "label1";
-            label1.Size = new Size(399, 86);
+            label1.Size = new Size(418, 86);
             label1.TabIndex = 0;
-            label1.Text = "RegisterView";
+            label1.Text = "FeedGuyView";
             // 
-            // RegisterView
+            // FeedGuyView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1050, 521);
+            ClientSize = new Size(929, 431);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "RegisterView";
-            Text = "RegisterView";
+            Name = "FeedGuyView";
+            Text = "FeedGuyView";
             ResumeLayout(false);
             PerformLayout();
         }

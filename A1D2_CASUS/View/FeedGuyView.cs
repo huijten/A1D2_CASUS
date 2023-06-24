@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace A1D2_CASUS.View
 {
-    public partial class LoginView : Form
+    public partial class FeedGuyView : Form
     {
-        public LoginView()
+        public FeedGuyView()
         {
             InitializeComponent();
         }
