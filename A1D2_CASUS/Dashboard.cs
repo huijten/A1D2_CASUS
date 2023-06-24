@@ -8,11 +8,7 @@ namespace A1D2_CASUS
         public Dashboard()
         {
             InitializeComponent();
-
-            // Uncomment welke je wilt laten zien
             OpenChildForm(new DashboardView());
-
-            //OpenChildForm(new RegisterView());
 
         }
 
@@ -35,36 +31,43 @@ namespace A1D2_CASUS
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new DashboardView());
+            titleLbl.Text = "DASHBOARD";
         }
 
         private void feedupBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FeedupView());
+            titleLbl.Text = "FEEDUP";
         }
 
         private void feedbackBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FeedbackView());
+            titleLbl.Text = "FEEDBACK";
         }
 
         private void feedforwardBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FeedforwardView());
+            titleLbl.Text = "FEEDFORWARD";
         }
 
         private void assignmentBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new AssignmentView());
+            titleLbl.Text = "ASSIGNMENT";
         }
 
         private void feedguyBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FeedGuyView());
+            titleLbl.Text = "FEEDGUY";
         }
 
         private void shopBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new ShopView());
+            titleLbl.Text = "SHOP";
         }
 
         private void LogoutBtn_Click(object sender, EventArgs e)
