@@ -35,19 +35,20 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(263, 165);
+            label1.Location = new Point(301, 220);
             label1.Name = "label1";
-            label1.Size = new Size(482, 86);
+            label1.Size = new Size(600, 106);
             label1.TabIndex = 0;
             label1.Text = "DashboardView";
             // 
             // DashboardView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(929, 431);
+            ClientSize = new Size(1062, 575);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "DashboardView";
             Text = "DashboardView";
             ResumeLayout(false);

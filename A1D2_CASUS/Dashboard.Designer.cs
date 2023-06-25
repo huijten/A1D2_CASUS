@@ -37,12 +37,13 @@
             paddingBottomPanel = new Panel();
             navPanel = new Panel();
             backButtonPanel = new Panel();
+            LogoutBtn = new Button();
             shopBtn = new Button();
             feedguyBtn = new Button();
-            assignmentBtn = new Button();
+            feedupBtn = new Button();
             feedforwardBtn = new Button();
             feedbackBtn = new Button();
-            feedupBtn = new Button();
+            assignmentBtn = new Button();
             dashboardBtn = new Button();
             paddingNavPanel = new Panel();
             userPanel = new Panel();
@@ -50,7 +51,6 @@
             titlePanel = new Panel();
             titleLbl = new Label();
             childFormPanel = new Panel();
-            LogoutBtn = new Button();
             headerPanel.SuspendLayout();
             navPanel.SuspendLayout();
             backButtonPanel.SuspendLayout();
@@ -61,27 +61,24 @@
             // 
             PaddingLeftPanel.Dock = DockStyle.Left;
             PaddingLeftPanel.Location = new Point(0, 0);
-            PaddingLeftPanel.Margin = new Padding(3, 2, 3, 2);
             PaddingLeftPanel.Name = "PaddingLeftPanel";
-            PaddingLeftPanel.Size = new Size(14, 562);
+            PaddingLeftPanel.Size = new Size(16, 749);
             PaddingLeftPanel.TabIndex = 0;
             // 
             // paddingRightPanel
             // 
             paddingRightPanel.Dock = DockStyle.Right;
-            paddingRightPanel.Location = new Point(1182, 0);
-            paddingRightPanel.Margin = new Padding(3, 2, 3, 2);
+            paddingRightPanel.Location = new Point(1350, 0);
             paddingRightPanel.Name = "paddingRightPanel";
-            paddingRightPanel.Size = new Size(18, 562);
+            paddingRightPanel.Size = new Size(21, 749);
             paddingRightPanel.TabIndex = 1;
             // 
             // paddingTopPanel
             // 
             paddingTopPanel.Dock = DockStyle.Top;
-            paddingTopPanel.Location = new Point(14, 0);
-            paddingTopPanel.Margin = new Padding(3, 2, 3, 2);
+            paddingTopPanel.Location = new Point(16, 0);
             paddingTopPanel.Name = "paddingTopPanel";
-            paddingTopPanel.Size = new Size(1168, 15);
+            paddingTopPanel.Size = new Size(1334, 20);
             paddingTopPanel.TabIndex = 2;
             // 
             // headerPanel
@@ -89,10 +86,9 @@
             headerPanel.BackColor = Color.FromArgb(72, 156, 130);
             headerPanel.Controls.Add(headerLbl);
             headerPanel.Dock = DockStyle.Top;
-            headerPanel.Location = new Point(14, 15);
-            headerPanel.Margin = new Padding(3, 2, 3, 2);
+            headerPanel.Location = new Point(16, 20);
             headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(1168, 45);
+            headerPanel.Size = new Size(1334, 60);
             headerPanel.TabIndex = 3;
             // 
             // headerLbl
@@ -100,28 +96,26 @@
             headerLbl.AutoSize = true;
             headerLbl.Font = new Font("Segoe UI Black", 24F, FontStyle.Bold, GraphicsUnit.Point);
             headerLbl.ForeColor = Color.White;
-            headerLbl.Location = new Point(5, 3);
+            headerLbl.Location = new Point(6, 4);
             headerLbl.Name = "headerLbl";
-            headerLbl.Size = new Size(217, 45);
+            headerLbl.Size = new Size(271, 54);
             headerLbl.TabIndex = 0;
             headerLbl.Text = "FEEDBUF 2.0";
             // 
             // paddingHeaderPanel
             // 
             paddingHeaderPanel.Dock = DockStyle.Top;
-            paddingHeaderPanel.Location = new Point(14, 60);
-            paddingHeaderPanel.Margin = new Padding(3, 2, 3, 2);
+            paddingHeaderPanel.Location = new Point(16, 80);
             paddingHeaderPanel.Name = "paddingHeaderPanel";
-            paddingHeaderPanel.Size = new Size(1168, 15);
+            paddingHeaderPanel.Size = new Size(1334, 20);
             paddingHeaderPanel.TabIndex = 4;
             // 
             // paddingBottomPanel
             // 
             paddingBottomPanel.Dock = DockStyle.Bottom;
-            paddingBottomPanel.Location = new Point(14, 547);
-            paddingBottomPanel.Margin = new Padding(3, 2, 3, 2);
+            paddingBottomPanel.Location = new Point(16, 729);
             paddingBottomPanel.Name = "paddingBottomPanel";
-            paddingBottomPanel.Size = new Size(1168, 15);
+            paddingBottomPanel.Size = new Size(1334, 20);
             paddingBottomPanel.TabIndex = 6;
             // 
             // navPanel
@@ -131,10 +125,9 @@
             navPanel.Controls.Add(paddingNavPanel);
             navPanel.Controls.Add(userPanel);
             navPanel.Dock = DockStyle.Left;
-            navPanel.Location = new Point(14, 75);
-            navPanel.Margin = new Padding(3, 2, 3, 2);
+            navPanel.Location = new Point(16, 100);
             navPanel.Name = "navPanel";
-            navPanel.Size = new Size(221, 472);
+            navPanel.Size = new Size(253, 629);
             navPanel.TabIndex = 7;
             // 
             // backButtonPanel
@@ -143,17 +136,30 @@
             backButtonPanel.Controls.Add(LogoutBtn);
             backButtonPanel.Controls.Add(shopBtn);
             backButtonPanel.Controls.Add(feedguyBtn);
-            backButtonPanel.Controls.Add(assignmentBtn);
+            backButtonPanel.Controls.Add(feedupBtn);
             backButtonPanel.Controls.Add(feedforwardBtn);
             backButtonPanel.Controls.Add(feedbackBtn);
-            backButtonPanel.Controls.Add(feedupBtn);
+            backButtonPanel.Controls.Add(assignmentBtn);
             backButtonPanel.Controls.Add(dashboardBtn);
             backButtonPanel.Dock = DockStyle.Fill;
-            backButtonPanel.Location = new Point(0, 109);
-            backButtonPanel.Margin = new Padding(3, 2, 3, 2);
+            backButtonPanel.Location = new Point(0, 145);
             backButtonPanel.Name = "backButtonPanel";
-            backButtonPanel.Size = new Size(221, 363);
+            backButtonPanel.Size = new Size(253, 484);
             backButtonPanel.TabIndex = 2;
+            // 
+            // LogoutBtn
+            // 
+            LogoutBtn.Dock = DockStyle.Bottom;
+            LogoutBtn.FlatAppearance.BorderSize = 0;
+            LogoutBtn.FlatStyle = FlatStyle.Flat;
+            LogoutBtn.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            LogoutBtn.Location = new Point(0, 429);
+            LogoutBtn.Name = "LogoutBtn";
+            LogoutBtn.Size = new Size(253, 55);
+            LogoutBtn.TabIndex = 6;
+            LogoutBtn.Text = "LOGOUT";
+            LogoutBtn.UseVisualStyleBackColor = true;
+            LogoutBtn.Click += LogoutBtn_Click;
             // 
             // shopBtn
             // 
@@ -161,10 +167,9 @@
             shopBtn.FlatAppearance.BorderSize = 0;
             shopBtn.FlatStyle = FlatStyle.Flat;
             shopBtn.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            shopBtn.Location = new Point(0, 246);
-            shopBtn.Margin = new Padding(3, 2, 3, 2);
+            shopBtn.Location = new Point(0, 330);
             shopBtn.Name = "shopBtn";
-            shopBtn.Size = new Size(221, 41);
+            shopBtn.Size = new Size(253, 55);
             shopBtn.TabIndex = 5;
             shopBtn.Text = "SHOP";
             shopBtn.UseVisualStyleBackColor = true;
@@ -176,29 +181,27 @@
             feedguyBtn.FlatAppearance.BorderSize = 0;
             feedguyBtn.FlatStyle = FlatStyle.Flat;
             feedguyBtn.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            feedguyBtn.Location = new Point(0, 205);
-            feedguyBtn.Margin = new Padding(3, 2, 3, 2);
+            feedguyBtn.Location = new Point(0, 275);
             feedguyBtn.Name = "feedguyBtn";
-            feedguyBtn.Size = new Size(221, 41);
+            feedguyBtn.Size = new Size(253, 55);
             feedguyBtn.TabIndex = 4;
             feedguyBtn.Text = "FEEDGUY";
             feedguyBtn.UseVisualStyleBackColor = true;
             feedguyBtn.Click += feedguyBtn_Click;
             // 
-            // assignmentBtn
+            // feedupBtn
             // 
-            assignmentBtn.Dock = DockStyle.Top;
-            assignmentBtn.FlatAppearance.BorderSize = 0;
-            assignmentBtn.FlatStyle = FlatStyle.Flat;
-            assignmentBtn.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            assignmentBtn.Location = new Point(0, 164);
-            assignmentBtn.Margin = new Padding(3, 2, 3, 2);
-            assignmentBtn.Name = "assignmentBtn";
-            assignmentBtn.Size = new Size(221, 41);
-            assignmentBtn.TabIndex = 2;
-            assignmentBtn.Text = "ASSIGNMENT";
-            assignmentBtn.UseVisualStyleBackColor = true;
-            assignmentBtn.Click += assignmentBtn_Click;
+            feedupBtn.Dock = DockStyle.Top;
+            feedupBtn.FlatAppearance.BorderSize = 0;
+            feedupBtn.FlatStyle = FlatStyle.Flat;
+            feedupBtn.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            feedupBtn.Location = new Point(0, 220);
+            feedupBtn.Name = "feedupBtn";
+            feedupBtn.Size = new Size(253, 55);
+            feedupBtn.TabIndex = 2;
+            feedupBtn.Text = "FEEDUP";
+            feedupBtn.UseVisualStyleBackColor = true;
+            feedupBtn.Click += assignmentBtn_Click;
             // 
             // feedforwardBtn
             // 
@@ -206,10 +209,9 @@
             feedforwardBtn.FlatAppearance.BorderSize = 0;
             feedforwardBtn.FlatStyle = FlatStyle.Flat;
             feedforwardBtn.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            feedforwardBtn.Location = new Point(0, 123);
-            feedforwardBtn.Margin = new Padding(3, 2, 3, 2);
+            feedforwardBtn.Location = new Point(0, 165);
             feedforwardBtn.Name = "feedforwardBtn";
-            feedforwardBtn.Size = new Size(221, 41);
+            feedforwardBtn.Size = new Size(253, 55);
             feedforwardBtn.TabIndex = 3;
             feedforwardBtn.Text = "FEEDFORWARD";
             feedforwardBtn.UseVisualStyleBackColor = true;
@@ -221,29 +223,27 @@
             feedbackBtn.FlatAppearance.BorderSize = 0;
             feedbackBtn.FlatStyle = FlatStyle.Flat;
             feedbackBtn.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            feedbackBtn.Location = new Point(0, 82);
-            feedbackBtn.Margin = new Padding(3, 2, 3, 2);
+            feedbackBtn.Location = new Point(0, 110);
             feedbackBtn.Name = "feedbackBtn";
-            feedbackBtn.Size = new Size(221, 41);
+            feedbackBtn.Size = new Size(253, 55);
             feedbackBtn.TabIndex = 3;
             feedbackBtn.Text = "FEEDBACK";
             feedbackBtn.UseVisualStyleBackColor = true;
             feedbackBtn.Click += feedbackBtn_Click;
             // 
-            // feedupBtn
+            // assignmentBtn
             // 
-            feedupBtn.Dock = DockStyle.Top;
-            feedupBtn.FlatAppearance.BorderSize = 0;
-            feedupBtn.FlatStyle = FlatStyle.Flat;
-            feedupBtn.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            feedupBtn.Location = new Point(0, 41);
-            feedupBtn.Margin = new Padding(3, 2, 3, 2);
-            feedupBtn.Name = "feedupBtn";
-            feedupBtn.Size = new Size(221, 41);
-            feedupBtn.TabIndex = 1;
-            feedupBtn.Text = "FEEDUP";
-            feedupBtn.UseVisualStyleBackColor = true;
-            feedupBtn.Click += feedupBtn_Click;
+            assignmentBtn.Dock = DockStyle.Top;
+            assignmentBtn.FlatAppearance.BorderSize = 0;
+            assignmentBtn.FlatStyle = FlatStyle.Flat;
+            assignmentBtn.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            assignmentBtn.Location = new Point(0, 55);
+            assignmentBtn.Name = "assignmentBtn";
+            assignmentBtn.Size = new Size(253, 55);
+            assignmentBtn.TabIndex = 1;
+            assignmentBtn.Text = "ASSIGNMENT";
+            assignmentBtn.UseVisualStyleBackColor = true;
+            assignmentBtn.Click += feedupBtn_Click;
             // 
             // dashboardBtn
             // 
@@ -252,9 +252,8 @@
             dashboardBtn.FlatStyle = FlatStyle.Flat;
             dashboardBtn.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             dashboardBtn.Location = new Point(0, 0);
-            dashboardBtn.Margin = new Padding(3, 2, 3, 2);
             dashboardBtn.Name = "dashboardBtn";
-            dashboardBtn.Size = new Size(221, 41);
+            dashboardBtn.Size = new Size(253, 55);
             dashboardBtn.TabIndex = 0;
             dashboardBtn.Text = "DASHBOARD";
             dashboardBtn.UseVisualStyleBackColor = true;
@@ -263,10 +262,9 @@
             // paddingNavPanel
             // 
             paddingNavPanel.Dock = DockStyle.Top;
-            paddingNavPanel.Location = new Point(0, 94);
-            paddingNavPanel.Margin = new Padding(3, 2, 3, 2);
+            paddingNavPanel.Location = new Point(0, 125);
             paddingNavPanel.Name = "paddingNavPanel";
-            paddingNavPanel.Size = new Size(221, 15);
+            paddingNavPanel.Size = new Size(253, 20);
             paddingNavPanel.TabIndex = 1;
             // 
             // userPanel
@@ -274,69 +272,50 @@
             userPanel.BackColor = Color.White;
             userPanel.Dock = DockStyle.Top;
             userPanel.Location = new Point(0, 0);
-            userPanel.Margin = new Padding(3, 2, 3, 2);
             userPanel.Name = "userPanel";
-            userPanel.Size = new Size(221, 94);
+            userPanel.Size = new Size(253, 125);
             userPanel.TabIndex = 0;
             // 
             // paddingMidPanel
             // 
             paddingMidPanel.Dock = DockStyle.Left;
-            paddingMidPanel.Location = new Point(235, 75);
-            paddingMidPanel.Margin = new Padding(3, 2, 3, 2);
+            paddingMidPanel.Location = new Point(269, 100);
             paddingMidPanel.Name = "paddingMidPanel";
-            paddingMidPanel.Size = new Size(18, 472);
+            paddingMidPanel.Size = new Size(21, 629);
             paddingMidPanel.TabIndex = 8;
             // 
             // titlePanel
             // 
             titlePanel.Controls.Add(titleLbl);
             titlePanel.Dock = DockStyle.Top;
-            titlePanel.Location = new Point(253, 75);
-            titlePanel.Margin = new Padding(3, 2, 3, 2);
+            titlePanel.Location = new Point(290, 100);
             titlePanel.Name = "titlePanel";
-            titlePanel.Size = new Size(929, 41);
+            titlePanel.Size = new Size(1060, 55);
             titlePanel.TabIndex = 9;
             // 
             // titleLbl
             // 
             titleLbl.AutoSize = true;
             titleLbl.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            titleLbl.Location = new Point(5, 8);
+            titleLbl.Location = new Point(6, 11);
             titleLbl.Name = "titleLbl";
-            titleLbl.Size = new Size(164, 32);
+            titleLbl.Size = new Size(206, 41);
             titleLbl.TabIndex = 0;
             titleLbl.Text = "DASHBOARD";
             // 
             // childFormPanel
             // 
             childFormPanel.Dock = DockStyle.Fill;
-            childFormPanel.Location = new Point(253, 116);
-            childFormPanel.Margin = new Padding(3, 2, 3, 2);
+            childFormPanel.Location = new Point(290, 155);
             childFormPanel.Name = "childFormPanel";
-            childFormPanel.Size = new Size(929, 431);
+            childFormPanel.Size = new Size(1060, 574);
             childFormPanel.TabIndex = 10;
-            // 
-            // LogoutBtn
-            // 
-            LogoutBtn.Dock = DockStyle.Bottom;
-            LogoutBtn.FlatAppearance.BorderSize = 0;
-            LogoutBtn.FlatStyle = FlatStyle.Flat;
-            LogoutBtn.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            LogoutBtn.Location = new Point(0, 322);
-            LogoutBtn.Margin = new Padding(3, 2, 3, 2);
-            LogoutBtn.Name = "LogoutBtn";
-            LogoutBtn.Size = new Size(221, 41);
-            LogoutBtn.TabIndex = 6;
-            LogoutBtn.Text = "LOGOUT";
-            LogoutBtn.UseVisualStyleBackColor = true;
-            LogoutBtn.Click += LogoutBtn_Click;
             // 
             // Dashboard
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1200, 562);
+            ClientSize = new Size(1371, 749);
             Controls.Add(childFormPanel);
             Controls.Add(titlePanel);
             Controls.Add(paddingMidPanel);
@@ -347,6 +326,7 @@
             Controls.Add(paddingTopPanel);
             Controls.Add(paddingRightPanel);
             Controls.Add(PaddingLeftPanel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Dashboard";
             ShowIcon = false;
             headerPanel.ResumeLayout(false);
@@ -374,10 +354,10 @@
         private Panel titlePanel;
         private Panel childFormPanel;
         private Button dashboardBtn;
-        private Button assignmentBtn;
+        private Button feedupBtn;
         private Button feedforwardBtn;
         private Button feedbackBtn;
-        private Button feedupBtn;
+        private Button assignmentBtn;
         private Button shopBtn;
         private Button feedguyBtn;
         private Label titleLbl;
