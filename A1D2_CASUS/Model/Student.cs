@@ -1,6 +1,7 @@
 ﻿using A1D2_CASUS.DAO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,14 @@ namespace A1D2_CASUS.Model
         public int Points { get; set; }
 
         public Student() { }
+        public Student(int id, string name, int studentNumber, string password)
+        {
+            Id = id;
+            Name = name;
+            StudentNumber = studentNumber;
+            Password = password;
+            
+        }
         public Student(int id, string name, int studentNumber, string password, List<Outfit> outfits, int xP, int points)
         {
             Id = id;
@@ -36,6 +45,10 @@ namespace A1D2_CASUS.Model
         public List<Student> Read()
         {
             return db.Read();
+        }
+        public DataTable GetStudentsdb()
+        {
+            return db.GetStudentsdatatable();
         }
 
         public Student Search(int id)

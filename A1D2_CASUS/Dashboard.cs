@@ -36,8 +36,8 @@ namespace A1D2_CASUS
 
         private void feedupBtn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FeedupView());
-            titleLbl.Text = "FEEDUP";
+            OpenChildForm(new AssignmentView());
+            titleLbl.Text = "ASSIGNMENT";
         }
 
         private void feedbackBtn_Click(object sender, EventArgs e)
@@ -54,8 +54,8 @@ namespace A1D2_CASUS
 
         private void assignmentBtn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new AssignmentView());
-            titleLbl.Text = "ASSIGNMENT";
+            OpenChildForm(new FeedupView());
+            titleLbl.Text = "FEEDUP";
         }
 
         private void feedguyBtn_Click(object sender, EventArgs e)
