@@ -10,7 +10,7 @@ namespace A1D2_CASUS
         {
             InitializeComponent();
 
-        }
+        }  
 
 
         private void BTNExit_Click(object sender, EventArgs e)
@@ -22,7 +22,7 @@ namespace A1D2_CASUS
         {
             string username = TXTLogin.Text;
             string password = TXTPassword.Text;
-            if (username == "Student" && password == "password")
+            if (username == "Mibobel" && password == "password")
             {
                 MessageBox.Show("Login successful!");
                 Dashboard dashboard = new Dashboard();
@@ -35,7 +35,5 @@ namespace A1D2_CASUS
             }
 
         }
-
-        
     }
 }

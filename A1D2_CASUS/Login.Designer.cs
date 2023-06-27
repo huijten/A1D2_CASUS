@@ -53,13 +53,13 @@
             TXTLogin.Name = "TXTLogin";
             TXTLogin.Size = new Size(125, 27);
             TXTLogin.TabIndex = 2;
-            TXTLogin.Text = "Student";
+            TXTLogin.Text = "Mibobel";
             // 
             // TXTPassword
             // 
             TXTPassword.Location = new Point(231, 166);
             TXTPassword.Name = "TXTPassword";
-            TXTPassword.PasswordChar = '*';
+            TXTPassword.PasswordChar = '$';
             TXTPassword.Size = new Size(125, 27);
             TXTPassword.TabIndex = 3;
             TXTPassword.Text = "password";

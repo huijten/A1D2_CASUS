@@ -1,7 +1,6 @@
 ﻿using A1D2_CASUS.Model;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -12,32 +11,12 @@ namespace A1D2_CASUS.DAO
     public class SupervisorDAO
     {
         //Kevin
-        //private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
+        private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
         //Ruben
         //private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
         //Wien
-        private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
+        //private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
 
-        public DataTable GetSupervisorsDatabase()
-        {
-            DataTable dataTable = new DataTable();
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string query = "SELECT * From Supervisor"; ;
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        adapter.Fill(dataTable);
-                    }
-                }
-            }
-
-            return dataTable;
-        }
         public Supervisor Search(int supervisorId)
         {
             using (SqlConnection cnn = new SqlConnection(connectionString))
