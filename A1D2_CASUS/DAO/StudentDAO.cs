@@ -88,7 +88,7 @@ namespace A1D2_CASUS.DAO
                     cnn.ConnectionString = connectionString;
                     cnn.Open();
                     cmd.Connection = cnn;
-                    cmd.CommandText = "SELECT s.Id, s.Name, s.StudentNumber, s.Password, s.XP, s.Points" +
+                    cmd.CommandText = "SELECT s.Id, s.Name, s.StudentNumber, s.Password, s.XP, s.Points," +
                         "o.Id AS OutfitId, o.Name AS OutfitName, o.Description AS OutfitDescription," +
                         "o.ImageURL AS OutfitImageURL, o.Cost AS OutfitCost " +
                         "FROM Student s " +
@@ -109,11 +109,11 @@ namespace A1D2_CASUS.DAO
                             int xp = reader.GetInt32(4);
                             int points = reader.GetInt32(5);
 
-                            int outfitId = reader.GetInt32(5);
-                            string outfitName = reader.GetString(6);
-                            string outfitDescription = reader.GetString(7);
-                            string outfitImageUrl = reader.GetString(8);
-                            int outfitCost = reader.GetInt32(9);
+                            int outfitId = reader.GetInt32(6);
+                            string outfitName = reader.GetString(7);
+                            string outfitDescription = reader.GetString(8);
+                            string outfitImageUrl = reader.GetString(9);
+                            int outfitCost = reader.GetInt32(10);
 
                             Outfit outfit = new Outfit(outfitId, outfitName, outfitDescription, outfitImageUrl, outfitCost);
 

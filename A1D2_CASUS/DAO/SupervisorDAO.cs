@@ -26,7 +26,7 @@ namespace A1D2_CASUS.DAO
                     cnn.ConnectionString = connectionString;
                     cnn.Open();
                     cmd.Connection = cnn;
-                    cmd.CommandText = "SELECT Id, Name, WorkNumber, Password WHERE Id = @SupervisorId";
+                    cmd.CommandText = "SELECT Id, Name, WorkNumber, Password FROM Supervisor WHERE Id = @SupervisorId";
                     cmd.Parameters.AddWithValue("@SupervisorId", supervisorId);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())

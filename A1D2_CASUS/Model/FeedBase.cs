@@ -33,5 +33,10 @@ namespace A1D2_CASUS.Model
         {
             return db.Search(id);
         }
+
+        public FeedBase SearchByAssignment(int id)
+        {
+            return db.SearchByAssignment(id);
+        }
     }
 }
