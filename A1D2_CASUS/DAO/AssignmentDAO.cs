@@ -44,6 +44,7 @@ namespace A1D2_CASUS.DAO
         }
         internal void CreateAssignment(Assignment assignment)
         {
+            
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -137,6 +138,23 @@ namespace A1D2_CASUS.DAO
                     }
                 }
             }
+        }
+        internal int Getlastid()
+        {
+            string insertQuery = "SELECT MAX(Id) FROM Assignment"; 
+            int lastInsertedId;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                {
+                    
+                    lastInsertedId = Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+            return  (lastInsertedId);
         }
         #endregion
     }

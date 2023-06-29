@@ -38,6 +38,10 @@ namespace A1D2_CASUS.Model
         {
             return db.Search(Id);
         }
+        internal int lastid()
+        {
+            return db.Getlastid();
+        }
         #region Crud
         internal DataTable Get2d4bAsnmt()
         {

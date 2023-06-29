@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            LoadBtn = new Button();
             contentLbl = new Label();
+            label7 = new Label();
             studentLbl = new Label();
+            assignmentComboBox = new ComboBox();
             assignmentLbl = new Label();
             supervisorLbl = new Label();
             deadlineLbl = new Label();
@@ -42,16 +45,16 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            assignmentComboBox = new ComboBox();
-            label7 = new Label();
-            LoadBtn = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(LoadBtn);
             panel1.Controls.Add(contentLbl);
+            panel1.Controls.Add(label7);
             panel1.Controls.Add(studentLbl);
+            panel1.Controls.Add(assignmentComboBox);
             panel1.Controls.Add(assignmentLbl);
             panel1.Controls.Add(supervisorLbl);
             panel1.Controls.Add(deadlineLbl);
@@ -63,11 +66,22 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(2, 352);
+            panel1.Location = new Point(3, 360);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(1056, 219);
             panel1.TabIndex = 0;
+            // 
+            // LoadBtn
+            // 
+            LoadBtn.Location = new Point(274, 150);
+            LoadBtn.Margin = new Padding(3, 4, 3, 4);
+            LoadBtn.Name = "LoadBtn";
+            LoadBtn.Size = new Size(122, 31);
+            LoadBtn.TabIndex = 3;
+            LoadBtn.Text = "Load feedback";
+            LoadBtn.UseVisualStyleBackColor = true;
+            LoadBtn.Click += LoadBtn_Click;
             // 
             // contentLbl
             // 
@@ -78,6 +92,15 @@
             contentLbl.TabIndex = 17;
             contentLbl.Text = "label7";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(224, 39);
+            label7.Name = "label7";
+            label7.Size = new Size(245, 20);
+            label7.TabIndex = 2;
+            label7.Text = "Select assignment to load feedback";
+            // 
             // studentLbl
             // 
             studentLbl.AutoSize = true;
@@ -86,6 +109,15 @@
             studentLbl.Size = new Size(50, 20);
             studentLbl.TabIndex = 16;
             studentLbl.Text = "label7";
+            // 
+            // assignmentComboBox
+            // 
+            assignmentComboBox.FormattingEnabled = true;
+            assignmentComboBox.Location = new Point(224, 77);
+            assignmentComboBox.Margin = new Padding(3, 4, 3, 4);
+            assignmentComboBox.Name = "assignmentComboBox";
+            assignmentComboBox.Size = new Size(220, 28);
+            assignmentComboBox.TabIndex = 1;
             // 
             // assignmentLbl
             // 
@@ -188,43 +220,11 @@
             label1.TabIndex = 3;
             label1.Text = "Supervisor";
             // 
-            // assignmentComboBox
-            // 
-            assignmentComboBox.FormattingEnabled = true;
-            assignmentComboBox.Location = new Point(303, 83);
-            assignmentComboBox.Margin = new Padding(3, 4, 3, 4);
-            assignmentComboBox.Name = "assignmentComboBox";
-            assignmentComboBox.Size = new Size(220, 28);
-            assignmentComboBox.TabIndex = 1;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(303, 45);
-            label7.Name = "label7";
-            label7.Size = new Size(245, 20);
-            label7.TabIndex = 2;
-            label7.Text = "Select assignment to load feedback";
-            // 
-            // LoadBtn
-            // 
-            LoadBtn.Location = new Point(353, 156);
-            LoadBtn.Margin = new Padding(3, 4, 3, 4);
-            LoadBtn.Name = "LoadBtn";
-            LoadBtn.Size = new Size(122, 31);
-            LoadBtn.TabIndex = 3;
-            LoadBtn.Text = "Load feedback";
-            LoadBtn.UseVisualStyleBackColor = true;
-            LoadBtn.Click += LoadBtn_Click;
-            // 
             // FeedbackView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1062, 575);
-            Controls.Add(LoadBtn);
-            Controls.Add(label7);
-            Controls.Add(assignmentComboBox);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
@@ -233,7 +233,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

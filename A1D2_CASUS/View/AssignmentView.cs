@@ -18,6 +18,8 @@ namespace A1D2_CASUS.View
         public AssignmentView()
         {
             InitializeComponent();
+            PopulateSTComboBox();
+            PopulateSVComboBox();
         }
         private void AssignmentView_Load(object sender, EventArgs e)
         {
@@ -33,6 +35,24 @@ namespace A1D2_CASUS.View
             DGVAssignment.DataSource = Asgnmt;
             DGVAssignment.ResetBindings();
         }
+        private void PopulateSTComboBox()
+        {
+            var bindingSourceAssignment = new BindingSource();
+            Student db = new Student();
+            bindingSourceAssignment.DataSource = db.Get2db4bST();
+            CBXStudent.DataSource = bindingSourceAssignment;
+            CBXStudent.DisplayMember = "Name";
+            CBXStudent.ValueMember = "Id";
+        }
+        private void PopulateSVComboBox()
+        {
+            var bindingSourceAssignment = new BindingSource();
+            Supervisor db = new Supervisor();
+            bindingSourceAssignment.DataSource = db.Get2db4SV();
+            CBXSupervisor.DataSource = bindingSourceAssignment;
+            CBXSupervisor.DisplayMember = "Name";
+            CBXSupervisor.ValueMember = "Id";
+        }
         # region CRud
         private void BTNCreate_Click(object sender, EventArgs e)
         {
@@ -42,7 +62,22 @@ namespace A1D2_CASUS.View
                 ACBCompleted.Checked,
                 ATBPoints.Value);
             asnt.CreateAsnmt(asnt);
+            Supervisor approvedby = new Supervisor();
+            Assignment assignment = new Assignment();
+            Student student = new Student();
+            Assignment tas = assignment.Search(assignment.lastid());
+            var x = CBXSupervisor.SelectedValue.ToString();
+            Supervisor has = approvedby.Search(Int32.Parse(x));
+            CBXSupervisor.SelectedItem = approvedby;
+            var s = CBXStudent.SelectedValue.ToString();
+            Student stu = student.Search(Int32.Parse(s));
+            CBXStudent.SelectedItem = student;
+            DateTime creationDate = DateTime.UtcNow;
+            string content = ATXTName.Text;
+            FeedBase fbe = new FeedBase(creationDate, has, tas, stu, content);
+            fbe.CRTfb(fbe);
             RefreshDGVAs();
+            
         }
         private void BTNUpdate_Click(object sender, EventArgs e)
         {
