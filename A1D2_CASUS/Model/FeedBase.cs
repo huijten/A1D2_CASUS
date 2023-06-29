@@ -19,8 +19,9 @@ namespace A1D2_CASUS.Model
         public Student Student { get; set; }
         public string Content { get; set; }
 
+        #region Constructor
         public FeedBase() { }
-        public FeedBase(int id, DateTime creationDate,  Supervisor approvedBy, Assignment assignment, Student student, string content)
+        public FeedBase(int id, DateTime creationDate, Supervisor approvedBy, Assignment assignment, Student student, string content)
         {
             Id = id;
             CreationDate = creationDate;
@@ -29,7 +30,7 @@ namespace A1D2_CASUS.Model
             Student = student;
             Content = content;
         }
-        public FeedBase( DateTime creationDate,  Supervisor approvedBy, Assignment assignment, Student student, string content)
+        public FeedBase(DateTime creationDate, Supervisor approvedBy, Assignment assignment, Student student, string content)
         {
             CreationDate = creationDate;
             ApprovedBy = approvedBy;
@@ -37,7 +38,7 @@ namespace A1D2_CASUS.Model
             Student = student;
             Content = content;
         }
-
+        #endregion
         public FeedBase Search(int id)
         {
             return db.Search(id);
@@ -47,17 +48,25 @@ namespace A1D2_CASUS.Model
         {
             return db.SearchByAssignment(id);
         }
-        #region CRUD
-
+        #region CRUD    
         public DataTable Get2DB4FB()
         {
             return db.GetFeedbaseFromDatabase();
         }
-
-        internal void CRTfb(Assignment assignment, Supervisor approvedby, Student student, FeedBase fb)
+        internal void CRTfb(FeedBase fb)
         {
-        //    db.CreateFeedbase(assignment, approvedby, student, fb)
+            db.CreateFeedbase(fb);
+        }
+        internal void UPDfb(int id, DateTime CreationDate, Supervisor approvedby, Assignment assignment, Student student, string content)
+        {
+            db.UpdateFeedbase(id, CreationDate, approvedby, assignment, student, content);
+        }
+        internal void DELfb(int id)
+        {
+            db.DeletFeedBase(id);
         }
         #endregion
+        
+
     }
 }

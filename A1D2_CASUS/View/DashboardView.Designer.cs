@@ -47,12 +47,17 @@
             // 
             // DGVDash
             // 
+            DGVDash.AccessibleName = "DGVDash";
+            DGVDash.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DGVDash.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVDash.Location = new Point(0, 3);
+            DGVDash.Dock = DockStyle.Top;
+            DGVDash.Location = new Point(0, 0);
+            DGVDash.MultiSelect = false;
             DGVDash.Name = "DGVDash";
             DGVDash.RowHeadersWidth = 51;
             DGVDash.RowTemplate.Height = 29;
-            DGVDash.Size = new Size(1060, 395);
+            DGVDash.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DGVDash.Size = new Size(1062, 395);
             DGVDash.TabIndex = 1;
             // 
             // DTPCreated
@@ -156,6 +161,7 @@
             BTNDelete.TabIndex = 20;
             BTNDelete.Text = "Remove  assignment feedbase";
             BTNDelete.UseVisualStyleBackColor = true;
+            BTNDelete.Click += BTNDelete_Click;
             // 
             // BTNUpdate
             // 
@@ -165,6 +171,7 @@
             BTNUpdate.TabIndex = 19;
             BTNUpdate.Text = "Update assignment feedbase";
             BTNUpdate.UseVisualStyleBackColor = true;
+            BTNUpdate.Click += BTNUpdate_Click;
             // 
             // BTNCreate
             // 

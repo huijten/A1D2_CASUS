@@ -23,13 +23,15 @@ namespace A1D2_CASUS.View
             PopulateSTComboBox();
             PopulateSVComboBox();
         }
-
         private void DashboardView_Load(object sender, EventArgs e)
         {
             FeedBase fdbase = new FeedBase();
             DataTable dtbfb = fdbase.Get2DB4FB();
+            var BindDash = new BindingSource();
+            BindDash.DataSource = dtbfb;
             DGVDash.DataSource = dtbfb;
         }
+        #region  Populating & Refreshing
         private void PopulateASComboBox()
         {
             var bindingSourceAssignment = new BindingSource();
@@ -59,11 +61,19 @@ namespace A1D2_CASUS.View
             CBXSupervisor.DisplayMember = "Name";
             CBXSupervisor.ValueMember = "Id";
         }
+        public void RefreshDGVDash()
+        {
+            FeedBase fdbase = new FeedBase();
+            DGVDash.DataSource = null;
+            DataTable dtbfb = fdbase.Get2DB4FB();
+            DGVDash.DataSource = dtbfb;
+            DGVDash.ResetBindings();
+        }
+        #endregion
 
-
+        #region CUD
         private void BTNCreate_Click(object sender, EventArgs e)
         {
-            FeedBaseDAO db = new FeedBaseDAO();
             Supervisor approvedby = new Supervisor();
             Assignment assignment = new Assignment();
             Student student = new Student();
@@ -79,9 +89,37 @@ namespace A1D2_CASUS.View
             DateTime creationDate = DTPCreated.Value;
             string content = RTBContent.Text;
             FeedBase fbe = new FeedBase(creationDate, has, tas, stu, content);
-            db.CreateFeedbase(fbe);
+            fbe.CRTfb(fbe);
+            RefreshDGVDash();
         }
-
-
+        private void BTNUpdate_Click(object sender, EventArgs e)
+        {
+            FeedBase feedb = new FeedBase();
+            int id = Convert.ToInt32(DGVDash.SelectedRows[0].Cells["Id"].Value);
+            Supervisor approvedby = new Supervisor();
+            Assignment assignment = new Assignment();
+            Student student = new Student();
+            var g = assignmentComboBox.SelectedValue.ToString();
+            Assignment tas = assignment.Search(Int32.Parse(g));
+            assignmentComboBox.SelectedItem = assignment;
+            var x = CBXSupervisor.SelectedValue.ToString();
+            Supervisor has = approvedby.Search(Int32.Parse(x));
+            CBXSupervisor.SelectedItem = approvedby;
+            var s = CBXStudent.SelectedValue.ToString();
+            Student stu = student.Search(Int32.Parse(s));
+            CBXStudent.SelectedItem = student;
+            DateTime creationDate = DTPCreated.Value;
+            string content = RTBContent.Text;
+            feedb.UPDfb(id, creationDate, has, tas, stu, content);
+            RefreshDGVDash();
+        }
+        private void BTNDelete_Click(object sender, EventArgs e)
+        {
+            FeedBase feedb = new FeedBase();
+            int id = Convert.ToInt32(DGVDash.SelectedRows[0].Cells["Id"].Value);
+            feedb.DELfb(id);
+            RefreshDGVDash();
+        }
+        #endregion
     }
 }

@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace A1D2_CASUS.DAO
 {
@@ -62,6 +63,47 @@ namespace A1D2_CASUS.DAO
             catch (SqlException ex) { throw ex; }
         }
 
+        internal void UpdateFeedbase(int id, DateTime CreationDate, Supervisor approvedby, Assignment assignment, Student student, string content)
+        {
+            {
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        string sql = "UPDATE FeedBase SET AssignmentId = @AssignmentId,  ApprovedById = @ApprovedById , StudentId= @StudentId, CreationDate =  @CreationDate, Content = @Content WHERE id = @Id ";
+                        connection.Open();
+                        using (SqlCommand command = new SqlCommand(sql, connection))
+                        {
+                            command.Parameters.AddWithValue("@Id", id);
+                            command.Parameters.AddWithValue("@AssignmentId", assignment.Id);
+                            command.Parameters.AddWithValue("@ApprovedById", approvedby.Id);
+                            command.Parameters.AddWithValue("@StudentId", student.Id);
+                            command.Parameters.AddWithValue("@CreationDate", CreationDate);
+                            command.Parameters.AddWithValue("@Content", content);
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (SqlException ex) { throw ex; }
+            }
+        }
+        internal void DeletFeedBase(int id)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "DELETE FeedBase WHERE id = @Id";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", id);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+        }
         #endregion
 
 

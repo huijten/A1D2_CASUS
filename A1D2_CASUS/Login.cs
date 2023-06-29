@@ -22,7 +22,7 @@ namespace A1D2_CASUS
         {
             string username = TXTLogin.Text;
             string password = TXTPassword.Text;
-            if (username == "Mibobel" && password == "password")
+            if (username == "CasusgroepAfwezig" && password == "password")
             {
                 MessageBox.Show("Login successful!");
                 Dashboard dashboard = new Dashboard();
