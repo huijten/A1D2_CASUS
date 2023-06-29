@@ -1,6 +1,7 @@
 ﻿using A1D2_CASUS.DAO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,12 @@ namespace A1D2_CASUS.Model
             WorkNumber = workNumber;
             Password = password;
         }
-
+        #region CRUD
+        internal DataTable Get2db4SV()
+        {
+            return db.GetSupervisorFromDatabase();
+        }
+        #endregion
         public Supervisor Search(int SupervisorId)
         {
             return db.Search(SupervisorId);

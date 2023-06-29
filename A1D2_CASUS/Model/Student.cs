@@ -1,6 +1,7 @@
 ﻿using A1D2_CASUS.DAO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,10 +43,18 @@ namespace A1D2_CASUS.Model
         {
             return db.Search(id);
         }
+        
 
         public void UnlockOutfit(Student student, Outfit outfit)
         {
             db.UnlockOutfit(this, outfit);
         }
+        #region CRUD
+        internal DataTable Get2db4bST()
+        {
+            return db.GetStudentFromDatabase();
+        }
+        #endregion
+
     }
 }

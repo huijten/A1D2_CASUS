@@ -41,6 +41,10 @@
             BTNCreate = new Button();
             BTNUpdate = new Button();
             BTNDelete = new Button();
+            label6 = new Label();
+            CBXSupervisor = new ComboBox();
+            label7 = new Label();
+            CBXStudent = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)DGVAssignment).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ATBPoints).BeginInit();
             SuspendLayout();
@@ -172,11 +176,53 @@
             BTNDelete.UseVisualStyleBackColor = true;
             BTNDelete.Click += BTNDelete_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(21, 538);
+            label6.Name = "label6";
+            label6.Size = new Size(95, 20);
+            label6.TabIndex = 17;
+            label6.Text = "Approved by";
+            // 
+            // CBXSupervisor
+            // 
+            CBXSupervisor.DisplayMember = "Id";
+            CBXSupervisor.FormattingEnabled = true;
+            CBXSupervisor.Location = new Point(143, 535);
+            CBXSupervisor.Name = "CBXSupervisor";
+            CBXSupervisor.Size = new Size(151, 28);
+            CBXSupervisor.TabIndex = 16;
+            CBXSupervisor.ValueMember = "Id";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(310, 540);
+            label7.Name = "label7";
+            label7.Size = new Size(87, 20);
+            label7.TabIndex = 19;
+            label7.Text = "Assigned to";
+            // 
+            // CBXStudent
+            // 
+            CBXStudent.DisplayMember = "Id";
+            CBXStudent.FormattingEnabled = true;
+            CBXStudent.Location = new Point(432, 535);
+            CBXStudent.Name = "CBXStudent";
+            CBXStudent.Size = new Size(151, 28);
+            CBXStudent.TabIndex = 18;
+            CBXStudent.ValueMember = "Id";
+            // 
             // AssignmentView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1062, 575);
+            Controls.Add(label7);
+            Controls.Add(CBXStudent);
+            Controls.Add(label6);
+            Controls.Add(CBXSupervisor);
             Controls.Add(BTNDelete);
             Controls.Add(BTNUpdate);
             Controls.Add(BTNCreate);
@@ -215,5 +261,9 @@
         private Button BTNCreate;
         private Button BTNUpdate;
         private Button BTNDelete;
+        private Label label6;
+        private ComboBox CBXSupervisor;
+        private Label label7;
+        private ComboBox CBXStudent;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using A1D2_CASUS.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,59 @@ namespace A1D2_CASUS.DAO
     public class FeedBaseDAO
     {
         //Kevin
-        private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
+        //private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
         //Ruben
         //private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
         //Wien
-        //private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
+        private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
+
+        #region CRUD
+        internal DataTable GetFeedbaseFromDatabase()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT * From FeedBase"; ;
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
+        }
+        internal void CreateFeedbase(FeedBase feedbase)//, Assignment assignment, Supervisor approvedby, Student student
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "INSERT INTO FeedBase (AssignmentId, ApprovedById, StudentId, creationDate, Content) VALUES (@AssignmentId, @ApprovedById, @StudentId, @CreationDate, @Content)";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@AssignmentId", feedbase.Assignment.Id);
+                        command.Parameters.AddWithValue("@ApprovedById", feedbase.ApprovedBy.Id);
+                        command.Parameters.AddWithValue("@StudentId", feedbase.Student.Id);
+                        command.Parameters.AddWithValue("@CreationDate", feedbase.CreationDate);
+                        command.Parameters.AddWithValue("@Content", feedbase.Content);
+                        command.ExecuteNonQuery();
+     
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+        }
+
+        #endregion
+
+
 
         #region Search Database
         public FeedBase Search(int feedBaseId)

@@ -43,8 +43,13 @@ namespace A1D2_CASUS.View
 
         private void LoadBtn_Click(object sender, EventArgs e)
         {
-            
+
             PopulateData(Int32.Parse(assignmentComboBox.SelectedValue.ToString()));
+        }
+
+        private void createBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
