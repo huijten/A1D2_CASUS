@@ -33,6 +33,17 @@ namespace A1D2_CASUS.Model
             Level = xP / 5;
             Points = points;
         }
+        public Student(int id, string name, int studentNumber, string password,  int xP, int points)
+        {
+            Id = id;
+            Name = name;
+            StudentNumber = studentNumber;
+            Password = password;
+            
+            XP = xP;
+            Level = xP / 5;
+            Points = points;
+        }
 
         public List<Student> Read()
         {

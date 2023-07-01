@@ -23,6 +23,7 @@ namespace A1D2_CASUS.View
             PopulateSTComboBox();
             PopulateSVComboBox();
         }
+        #region  Populating & Refreshing
         private void DashboardView_Load(object sender, EventArgs e)
         {
             FeedBase fdbase = new FeedBase();
@@ -31,7 +32,7 @@ namespace A1D2_CASUS.View
             BindDash.DataSource = dtbfb;
             DGVDash.DataSource = dtbfb;
         }
-        #region  Populating & Refreshing
+        
         private void PopulateASComboBox()
         {
             var bindingSourceAssignment = new BindingSource();

@@ -16,7 +16,7 @@ namespace A1D2_CASUS.DAO
         //Ruben
         //private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
         //Wien
-        private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
+        private string connectionString = @"Server=DESKTOP-TJRHV75; Database=Gamification; Trusted_Connection=True";
 
         public Supervisor Search(int supervisorId)
         {

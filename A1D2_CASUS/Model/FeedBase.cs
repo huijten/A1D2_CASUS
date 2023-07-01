@@ -19,8 +19,21 @@ namespace A1D2_CASUS.Model
         public Student Student { get; set; }
         public string Content { get; set; }
 
+        public string SeeIds
+        {
+            get
+            {
+                return $"{Id} {ApprovedBy} {Assignment} {Student}";
+            }
+        }
         #region Constructor
         public FeedBase() { }
+        public FeedBase(int id, DateTime creationDate, string content)   
+        {
+            Id = id;
+            CreationDate = creationDate;
+            Content = content;
+        }
         public FeedBase(int id, DateTime creationDate, Supervisor approvedBy, Assignment assignment, Student student, string content)
         {
             Id = id;
@@ -43,12 +56,18 @@ namespace A1D2_CASUS.Model
         {
             return db.Search(id);
         }
+        
 
         public FeedBase SearchByAssignment(int id)
         {
             return db.SearchByAssignment(id);
         }
-        #region CRUD    
+        #region CRUD
+        
+        public List<FeedBase> RDLIST()
+        {
+            return db.ReadFeedbase();
+        }
         public DataTable Get2DB4FB()
         {
             return db.GetFeedbaseFromDatabase();

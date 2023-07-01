@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using System.Xml.Linq;
 
 namespace A1D2_CASUS.DAO
@@ -17,9 +19,46 @@ namespace A1D2_CASUS.DAO
         //Ruben
         //private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
         //Wien
-        private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
+        private string connectionString = @"Server=DESKTOP-TJRHV75; Database=Gamification; Trusted_Connection=True";
 
+
+        Supervisor approvedby { get; set; }
+        Assignment assignment { get; set; }
+        Student student { get; set; }
+
+        FeedBase feedbase = new FeedBase(0, DateTime.Now, "");
         #region CRUD
+
+        public List<FeedBase> ReadFeedbase()
+        { //command.Parameters.AddWithValue("@Id", id);
+            {
+
+                List<FeedBase> feedbases = new List<FeedBase>();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand("SELECT * FROM FeedBase ORDER BY Id", connection))
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+
+                            feedbase = new FeedBase(Int32.Parse(reader[0].ToString()),
+                                    DateTime.Parse(reader[1].ToString()),
+                                    approvedby,
+                                    assignment,
+                                    student,
+                                    reader[4].ToString());
+                                    feedbases.Add(feedbase);
+
+                                // Get FeedBase by FeedId  
+                        }
+                        return feedbases;
+                    }
+                }
+                 
+            }
+        }
         internal DataTable GetFeedbaseFromDatabase()
         {
             DataTable dataTable = new DataTable();
@@ -40,6 +79,7 @@ namespace A1D2_CASUS.DAO
 
             return dataTable;
         }
+        
         internal void CreateFeedbase(FeedBase feedbase)//, Assignment assignment, Supervisor approvedby, Student student
         {
             try
@@ -118,7 +158,7 @@ namespace A1D2_CASUS.DAO
                     cnn.ConnectionString = connectionString;
                     cnn.Open();
                     cmd.Connection = cnn;
-                    cmd.CommandText = "SELECT Id, CreationDate, ApprovedById, AssignmentId, StudentId, Content FROM FeedBase WHERE Id = @FeedBaseId";
+                    cmd.CommandText = "SELECT * FROM FeedBase WHERE Id = @feedBaseId ";//CreationDate, ApprovedById, AssignmentId, StudentId, Content FROM FeedBase WHERE Id = @Id";
                     cmd.Parameters.AddWithValue("@FeedBaseId", feedBaseId);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -131,16 +171,16 @@ namespace A1D2_CASUS.DAO
                             string content = reader.GetString(5);
 
                             int SupervisorId = reader.GetInt32(2);
-                            Supervisor supervisor = new Supervisor();
-
+                            Supervisor approvedby = new Supervisor();
                             int AssignmentId = reader.GetInt32(3);
                             Assignment assignment = new Assignment();
 
                             int studentId = reader.GetInt32(4);
                             Student student = new Student();
 
-                            FeedBase feed = new FeedBase(id, date, supervisor.Search(SupervisorId), 
+                            FeedBase fb = new FeedBase(id, date, approvedby.Search(SupervisorId), 
                                 assignment.Search(AssignmentId), student.Search(studentId), content);
+                            feedbases.Add(fb);
                         }
 
                         return feedbases.FirstOrDefault(); // Return the first student found (or null if not found)

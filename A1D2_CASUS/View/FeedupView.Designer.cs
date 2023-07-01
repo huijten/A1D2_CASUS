@@ -29,27 +29,43 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            DGVFU = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)DGVFU).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 48F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(266, 166);
+            label1.Location = new Point(376, 419);
             label1.Name = "label1";
-            label1.Size = new Size(389, 86);
+            label1.Size = new Size(486, 106);
             label1.TabIndex = 0;
             label1.Text = "FeedUpView";
             // 
+            // DGVFU
+            // 
+            DGVFU.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVFU.Location = new Point(26, 12);
+            DGVFU.Name = "DGVFU";
+            DGVFU.RowHeadersWidth = 51;
+            DGVFU.RowTemplate.Height = 29;
+            DGVFU.Size = new Size(981, 312);
+            DGVFU.TabIndex = 1;
+            // 
             // FeedupView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(929, 431);
+            ClientSize = new Size(1062, 575);
+            Controls.Add(DGVFU);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FeedupView";
             Text = "FeedupView";
+            Load += FeedupView_Load;
+            ((System.ComponentModel.ISupportInitialize)DGVFU).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -57,5 +73,6 @@
         #endregion
 
         private Label label1;
+        private DataGridView DGVFU;
     }
 }

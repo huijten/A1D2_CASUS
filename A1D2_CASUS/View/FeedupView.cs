@@ -1,4 +1,6 @@
-﻿using System;
+﻿using A1D2_CASUS.DAO;
+using A1D2_CASUS.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,23 @@ namespace A1D2_CASUS.View
         public FeedupView()
         {
             InitializeComponent();
+            fillDGVFeedUp();
         }
+
+        private void FeedupView_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void fillDGVFeedUp()
+        {
+            FeedBase fdbase = new FeedBase();
+            FeedUp fdup = new FeedUp();
+            DGVFU.DataSource = null;
+            List<FeedUp> fp = fdup.GetFedup();
+            DGVFU.DataSource = fp;
+            DGVFU.ResetBindings();
+
+        }
+
     }
 }

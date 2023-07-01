@@ -6,10 +6,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace A1D2_CASUS.View
 {
@@ -18,14 +20,14 @@ namespace A1D2_CASUS.View
         public AssignmentView()
         {
             InitializeComponent();
-            PopulateSTComboBox();
-            PopulateSVComboBox();
         }
+        # region Populate&refresh
         private void AssignmentView_Load(object sender, EventArgs e)
         {
-            Assignment asgnmt = new Assignment();
-            DataTable Asgnmt = asgnmt.Get2d4bAsnmt();
-            DGVAssignment.DataSource = Asgnmt;
+            RefreshDGVAs();
+            PopulateSVComboBox();
+            PopulateSTComboBox();
+
         }
         public void RefreshDGVAs()
         {
@@ -53,7 +55,9 @@ namespace A1D2_CASUS.View
             CBXSupervisor.DisplayMember = "Name";
             CBXSupervisor.ValueMember = "Id";
         }
-        # region CRud
+        #endregion
+
+        #region CRud
         private void BTNCreate_Click(object sender, EventArgs e)
         {
             Assignment asnt = new Assignment(
@@ -77,7 +81,6 @@ namespace A1D2_CASUS.View
             FeedBase fbe = new FeedBase(creationDate, has, tas, stu, content);
             fbe.CRTfb(fbe);
             RefreshDGVAs();
-            
         }
         private void BTNUpdate_Click(object sender, EventArgs e)
         {

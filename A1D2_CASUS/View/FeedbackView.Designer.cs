@@ -28,53 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
             LoadBtn = new Button();
-            contentLbl = new Label();
-            label7 = new Label();
-            studentLbl = new Label();
             assignmentComboBox = new ComboBox();
-            assignmentLbl = new Label();
-            supervisorLbl = new Label();
             deadlineLbl = new Label();
             createBtn = new Button();
             label6 = new Label();
             label5 = new Label();
-            richTextBox2 = new RichTextBox();
+            RTBNotes = new RichTextBox();
             label4 = new Label();
             label3 = new Label();
-            label2 = new Label();
             label1 = new Label();
-            panel1.SuspendLayout();
+            CBXSupervisor = new ComboBox();
+            CBXStudent = new ComboBox();
+            RTBContents = new RichTextBox();
+            DGVFBS = new DataGridView();
+            LBFBS = new ListBox();
+            ((System.ComponentModel.ISupportInitialize)DGVFBS).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(LoadBtn);
-            panel1.Controls.Add(contentLbl);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(studentLbl);
-            panel1.Controls.Add(assignmentComboBox);
-            panel1.Controls.Add(assignmentLbl);
-            panel1.Controls.Add(supervisorLbl);
-            panel1.Controls.Add(deadlineLbl);
-            panel1.Controls.Add(createBtn);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(richTextBox2);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(3, 360);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1056, 219);
-            panel1.TabIndex = 0;
             // 
             // LoadBtn
             // 
-            LoadBtn.Location = new Point(274, 150);
+            LoadBtn.Location = new Point(862, 31);
             LoadBtn.Margin = new Padding(3, 4, 3, 4);
             LoadBtn.Name = "LoadBtn";
             LoadBtn.Size = new Size(122, 31);
@@ -83,64 +57,19 @@
             LoadBtn.UseVisualStyleBackColor = true;
             LoadBtn.Click += LoadBtn_Click;
             // 
-            // contentLbl
-            // 
-            contentLbl.AutoSize = true;
-            contentLbl.Location = new Point(119, 80);
-            contentLbl.Name = "contentLbl";
-            contentLbl.Size = new Size(50, 20);
-            contentLbl.TabIndex = 17;
-            contentLbl.Text = "label7";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(224, 39);
-            label7.Name = "label7";
-            label7.Size = new Size(245, 20);
-            label7.TabIndex = 2;
-            label7.Text = "Select assignment to load feedback";
-            // 
-            // studentLbl
-            // 
-            studentLbl.AutoSize = true;
-            studentLbl.Location = new Point(577, 131);
-            studentLbl.Name = "studentLbl";
-            studentLbl.Size = new Size(50, 20);
-            studentLbl.TabIndex = 16;
-            studentLbl.Text = "label7";
-            // 
             // assignmentComboBox
             // 
             assignmentComboBox.FormattingEnabled = true;
-            assignmentComboBox.Location = new Point(224, 77);
+            assignmentComboBox.Location = new Point(801, 92);
             assignmentComboBox.Margin = new Padding(3, 4, 3, 4);
             assignmentComboBox.Name = "assignmentComboBox";
             assignmentComboBox.Size = new Size(220, 28);
             assignmentComboBox.TabIndex = 1;
             // 
-            // assignmentLbl
-            // 
-            assignmentLbl.AutoSize = true;
-            assignmentLbl.Location = new Point(577, 73);
-            assignmentLbl.Name = "assignmentLbl";
-            assignmentLbl.Size = new Size(50, 20);
-            assignmentLbl.TabIndex = 15;
-            assignmentLbl.Text = "label7";
-            // 
-            // supervisorLbl
-            // 
-            supervisorLbl.AutoSize = true;
-            supervisorLbl.Location = new Point(577, 21);
-            supervisorLbl.Name = "supervisorLbl";
-            supervisorLbl.Size = new Size(17, 20);
-            supervisorLbl.TabIndex = 14;
-            supervisorLbl.Text = "a";
-            // 
             // deadlineLbl
             // 
             deadlineLbl.AutoSize = true;
-            deadlineLbl.Location = new Point(119, 21);
+            deadlineLbl.Location = new Point(906, 138);
             deadlineLbl.Name = "deadlineLbl";
             deadlineLbl.Size = new Size(105, 20);
             deadlineLbl.TabIndex = 13;
@@ -148,7 +77,7 @@
             // 
             // createBtn
             // 
-            createBtn.Location = new Point(837, 176);
+            createBtn.Location = new Point(862, 509);
             createBtn.Margin = new Padding(3, 4, 3, 4);
             createBtn.Name = "createBtn";
             createBtn.Size = new Size(86, 31);
@@ -160,7 +89,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(854, 49);
+            label6.Location = new Point(882, 365);
             label6.Name = "label6";
             label6.Size = new Size(48, 20);
             label6.TabIndex = 11;
@@ -169,25 +98,25 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(23, 80);
+            label5.Location = new Point(862, 168);
             label5.Name = "label5";
             label5.Size = new Size(67, 20);
             label5.TabIndex = 10;
             label5.Text = "Contents";
             // 
-            // richTextBox2
+            // RTBNotes
             // 
-            richTextBox2.Location = new Point(765, 73);
-            richTextBox2.Margin = new Padding(3, 4, 3, 4);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(228, 93);
-            richTextBox2.TabIndex = 9;
-            richTextBox2.Text = "";
+            RTBNotes.Location = new Point(783, 399);
+            RTBNotes.Margin = new Padding(3, 4, 3, 4);
+            RTBNotes.Name = "RTBNotes";
+            RTBNotes.Size = new Size(228, 93);
+            RTBNotes.TabIndex = 9;
+            RTBNotes.Text = "";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(23, 21);
+            label4.Location = new Point(789, 138);
             label4.Name = "label4";
             label4.Size = new Size(69, 20);
             label4.TabIndex = 7;
@@ -196,63 +125,116 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(466, 131);
+            label3.Location = new Point(789, 310);
             label3.Name = "label3";
             label3.Size = new Size(60, 20);
             label3.TabIndex = 5;
             label3.Text = "Student";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(466, 73);
-            label2.Name = "label2";
-            label2.Size = new Size(86, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Assignment";
-            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(466, 21);
+            label1.Location = new Point(780, 277);
             label1.Name = "label1";
             label1.Size = new Size(78, 20);
             label1.TabIndex = 3;
             label1.Text = "Supervisor";
+            // 
+            // CBXSupervisor
+            // 
+            CBXSupervisor.FormattingEnabled = true;
+            CBXSupervisor.Location = new Point(871, 274);
+            CBXSupervisor.Margin = new Padding(3, 4, 3, 4);
+            CBXSupervisor.Name = "CBXSupervisor";
+            CBXSupervisor.Size = new Size(158, 28);
+            CBXSupervisor.TabIndex = 18;
+            // 
+            // CBXStudent
+            // 
+            CBXStudent.FormattingEnabled = true;
+            CBXStudent.Location = new Point(871, 307);
+            CBXStudent.Margin = new Padding(3, 4, 3, 4);
+            CBXStudent.Name = "CBXStudent";
+            CBXStudent.Size = new Size(158, 28);
+            CBXStudent.TabIndex = 19;
+            // 
+            // RTBContents
+            // 
+            RTBContents.Location = new Point(789, 202);
+            RTBContents.Margin = new Padding(3, 4, 3, 4);
+            RTBContents.Name = "RTBContents";
+            RTBContents.Size = new Size(241, 54);
+            RTBContents.TabIndex = 20;
+            RTBContents.Text = "";
+            // 
+            // DGVFBS
+            // 
+            DGVFBS.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGVFBS.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DGVFBS.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVFBS.Location = new Point(4, -3);
+            DGVFBS.MultiSelect = false;
+            DGVFBS.Name = "DGVFBS";
+            DGVFBS.RowHeadersWidth = 51;
+            DGVFBS.RowTemplate.Height = 29;
+            DGVFBS.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            DGVFBS.Size = new Size(770, 305);
+            DGVFBS.TabIndex = 22;
+            DGVFBS.CellContentClick += DGVFBS_CellContentClick;
+            // 
+            // LBFBS
+            // 
+            LBFBS.FormattingEnabled = true;
+            LBFBS.ItemHeight = 20;
+            LBFBS.Location = new Point(502, 334);
+            LBFBS.Name = "LBFBS";
+            LBFBS.Size = new Size(150, 184);
+            LBFBS.TabIndex = 23;
             // 
             // FeedbackView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1062, 575);
-            Controls.Add(panel1);
+            Controls.Add(LBFBS);
+            Controls.Add(DGVFBS);
+            Controls.Add(RTBContents);
+            Controls.Add(CBXStudent);
+            Controls.Add(CBXSupervisor);
+            Controls.Add(createBtn);
+            Controls.Add(label6);
+            Controls.Add(LoadBtn);
+            Controls.Add(RTBNotes);
+            Controls.Add(assignmentComboBox);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(deadlineLbl);
+            Controls.Add(label5);
+            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "FeedbackView";
             Text = "FeedbackView";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DGVFBS).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
         private Label label3;
-        private Label label2;
         private Label label1;
         private Label label4;
-        private Label contentLbl;
-        private Label studentLbl;
-        private Label assignmentLbl;
-        private Label supervisorLbl;
         private Label deadlineLbl;
         private Button createBtn;
         private Label label6;
         private Label label5;
-        private RichTextBox richTextBox2;
+        private RichTextBox RTBNotes;
         private ComboBox assignmentComboBox;
-        private Label label7;
         private Button LoadBtn;
+        private ComboBox CBXSupervisor;
+        private ComboBox CBXStudent;
+        private RichTextBox RTBContents;
+        public DataGridView DGVFBS;
+        public ListBox LBFBS;
     }
 }
