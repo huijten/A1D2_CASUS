@@ -53,7 +53,7 @@
             TXTLogin.Name = "TXTLogin";
             TXTLogin.Size = new Size(125, 27);
             TXTLogin.TabIndex = 2;
-            TXTLogin.Text = "Student";
+            TXTLogin.Text = "Mibobel";
             // 
             // TXTPassword
             // 
@@ -133,6 +133,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             TopMost = true;
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }

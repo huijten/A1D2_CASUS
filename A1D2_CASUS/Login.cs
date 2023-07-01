@@ -22,7 +22,7 @@ namespace A1D2_CASUS
         {
             string username = TXTLogin.Text;
             string password = TXTPassword.Text;
-            if (username == "Student" && password == "password")
+            if (username == "CasusgroepAfwezig" && password == "password")
             {
                 MessageBox.Show("Login successful!");
                 Dashboard dashboard = new Dashboard();
@@ -33,6 +33,11 @@ namespace A1D2_CASUS
             {
                 MessageBox.Show("Invalid username or password. Please try again.");
             }
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
 
         }
 
