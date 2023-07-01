@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A1D2_CASUS.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace A1D2_CASUS.Model
 {
     public class FeedForward
     {
+        FeedForwardDAO db = new FeedForwardDAO();
         public int Id { get; set; }
         public FeedBase Feed { get; set; }
         public string Notes { get; set; }
@@ -18,6 +20,11 @@ namespace A1D2_CASUS.Model
             Id = id;
             Feed = feed;
             Notes = notes;
+        }
+
+        public void Create(FeedForward feed) 
+        {
+            db.Create(feed);
         }
     }
 }

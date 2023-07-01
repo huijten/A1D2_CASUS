@@ -50,7 +50,31 @@ namespace A1D2_CASUS.DAO
 
             return feedforwards;
         }
+        #endregion
+
+        #region Creating FeedForward
+        public void Create(FeedForward feedForward)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "INSERT INTO FeedForward (Feed, Notes) VALUES (@Feed, @Notes)";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@Feed", feedForward.Feed.Id);
+                        command.Parameters.AddWithValue("@Notes", feedForward.Notes);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+        }
+        #endregion
     }
-    #endregion
+    
+
 }
 

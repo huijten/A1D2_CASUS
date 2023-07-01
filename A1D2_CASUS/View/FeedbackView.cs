@@ -17,6 +17,16 @@ namespace A1D2_CASUS.View
         {
             InitializeComponent();
             PopulateComboBox();
+            ResetLabels();
+        }
+
+        private void ResetLabels()
+        {
+            supervisorLbl.Text = "";
+            deadlineLbl.Text = "";
+            contentLbl.Text = "";
+            studentLbl.Text = "";
+            assignmentLbl.Text = "";
         }
 
         private void PopulateComboBox()
