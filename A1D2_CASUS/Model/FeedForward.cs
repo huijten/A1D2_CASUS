@@ -1,6 +1,7 @@
 ﻿using A1D2_CASUS.DAO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,11 @@ namespace A1D2_CASUS.Model
         public void Create(FeedForward feed) 
         {
             db.Create(feed);
+        }
+
+        internal DataTable GetDataTables()
+        {
+            return db.GetDataTables();
         }
     }
 }

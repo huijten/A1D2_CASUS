@@ -19,6 +19,14 @@ namespace A1D2_CASUS.View
             InitializeComponent();
             PopulateComboBox();
             ResetLabels();
+            LoadDataGrid();
+        }
+
+        private void LoadDataGrid()
+        {
+            FeedForward fd = new FeedForward();
+            DataTable fdDT = fd.GetDataTables();
+            dataGridView1.DataSource = fdDT;
         }
 
         private void ResetLabels()
@@ -49,6 +57,7 @@ namespace A1D2_CASUS.View
             deadlineLbl.Text = feedBase.CreationDate.ToString();
             contentLbl.Text = feedBase.Content;
             studentLbl.Text = feedBase.Student.Name;
+            assignmentLbl.Text = feedBase.Assignment.Name;
         }
 
         private void loadBtn_Click(object sender, EventArgs e)
@@ -61,6 +70,7 @@ namespace A1D2_CASUS.View
             FeedForward ff = new FeedForward(0, FBase, notesTxtBox.Text);
             ff.Create(ff);
             MessageBox.Show("Succesfully Created!");
+            LoadDataGrid();
         }
     }
 }

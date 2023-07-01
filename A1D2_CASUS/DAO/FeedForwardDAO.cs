@@ -1,6 +1,7 @@
 ﻿using A1D2_CASUS.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -73,8 +74,31 @@ namespace A1D2_CASUS.DAO
             catch (SqlException ex) { throw ex; }
         }
         #endregion
+
+        #region Datatable
+        internal DataTable GetDataTables()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT f.Id, f.Feed, f.Notes, fb.Id, fb.CreationDate, fb.ApprovedById, fb.AssignmentId, fb.StudentId, fb.Content FROM FeedForward f JOIN FeedBase fb ON f.Feed = fb.Id"; ;
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
+        }
+        #endregion
     }
-    
+
 
 }
 

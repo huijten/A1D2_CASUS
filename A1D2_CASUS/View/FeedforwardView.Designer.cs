@@ -45,29 +45,31 @@
             deadlineLbl = new Label();
             label3 = new Label();
             label2 = new Label();
+            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(342, 51);
+            label1.Location = new Point(35, 36);
             label1.Name = "label1";
-            label1.Size = new Size(213, 15);
+            label1.Size = new Size(102, 15);
             label1.TabIndex = 0;
-            label1.Text = "Select assignment to load FeedForward";
+            label1.Text = "Select assignment";
             // 
             // assignmentComboBox
             // 
             assignmentComboBox.FormattingEnabled = true;
-            assignmentComboBox.Location = new Point(342, 82);
+            assignmentComboBox.Location = new Point(23, 54);
             assignmentComboBox.Name = "assignmentComboBox";
-            assignmentComboBox.Size = new Size(213, 23);
+            assignmentComboBox.Size = new Size(126, 23);
             assignmentComboBox.TabIndex = 1;
             // 
             // loadBtn
             // 
-            loadBtn.Location = new Point(407, 124);
+            loadBtn.Location = new Point(46, 99);
             loadBtn.Name = "loadBtn";
             loadBtn.Size = new Size(75, 23);
             loadBtn.TabIndex = 2;
@@ -78,7 +80,10 @@
             // panel1
             // 
             panel1.Controls.Add(createBtn);
+            panel1.Controls.Add(loadBtn);
             panel1.Controls.Add(notesTxtBox);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(assignmentComboBox);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(studentLbl);
             panel1.Controls.Add(assignmentLbl);
@@ -179,7 +184,7 @@
             // contentLbl
             // 
             contentLbl.AutoSize = true;
-            contentLbl.Location = new Point(124, 64);
+            contentLbl.Location = new Point(298, 54);
             contentLbl.Name = "contentLbl";
             contentLbl.Size = new Size(38, 15);
             contentLbl.TabIndex = 3;
@@ -188,7 +193,7 @@
             // deadlineLbl
             // 
             deadlineLbl.AutoSize = true;
-            deadlineLbl.Location = new Point(124, 24);
+            deadlineLbl.Location = new Point(298, 24);
             deadlineLbl.Name = "deadlineLbl";
             deadlineLbl.Size = new Size(19, 15);
             deadlineLbl.TabIndex = 2;
@@ -197,7 +202,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(34, 64);
+            label3.Location = new Point(209, 54);
             label3.Name = "label3";
             label3.Size = new Size(55, 15);
             label3.TabIndex = 1;
@@ -206,28 +211,36 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(32, 24);
+            label2.Location = new Point(211, 24);
             label2.Name = "label2";
             label2.Size = new Size(53, 15);
             label2.TabIndex = 0;
             label2.Text = "Deadline";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(905, 249);
+            dataGridView1.TabIndex = 4;
             // 
             // FeedforwardView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(929, 431);
+            Controls.Add(dataGridView1);
             Controls.Add(panel1);
-            Controls.Add(loadBtn);
-            Controls.Add(assignmentComboBox);
-            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FeedforwardView";
             Text = "FeedforwardView";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -249,5 +262,6 @@
         private Button createBtn;
         private RichTextBox notesTxtBox;
         private Label label7;
+        private DataGridView dataGridView1;
     }
 }

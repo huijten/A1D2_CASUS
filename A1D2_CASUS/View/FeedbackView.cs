@@ -18,6 +18,14 @@ namespace A1D2_CASUS.View
             InitializeComponent();
             PopulateComboBox();
             ResetLabels();
+            LoadDataGrid();
+        }
+
+        private void LoadDataGrid()
+        {
+            FeedBack fb = new FeedBack();
+            DataTable fbDT = fb.Get2d4bAsnmt();
+            feedBackDataGridView.DataSource = fbDT;
         }
 
         private void ResetLabels()
@@ -48,12 +56,13 @@ namespace A1D2_CASUS.View
             deadlineLbl.Text = feedBase.CreationDate.ToString();
             contentLbl.Text = feedBase.Content;
             studentLbl.Text = feedBase.Student.Name;
+            assignmentLbl.Text = feedBase.Assignment.Name;
 
         }
 
         private void LoadBtn_Click(object sender, EventArgs e)
         {
-            
+
             PopulateData(Int32.Parse(assignmentComboBox.SelectedValue.ToString()));
         }
     }
