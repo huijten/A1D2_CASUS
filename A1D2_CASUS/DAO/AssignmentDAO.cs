@@ -10,20 +10,23 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
+using Microsoft.Extensions.Configuration;
 
 namespace A1D2_CASUS.DAO
 {
 
-    public class AssignmentDAO
+    public class AssignmentDAO : Constring
     {
+
         
+
 
         //Kevin
         //private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
         //Ruben
         //private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
         //Wien
-        private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
+        //private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
 
         #region C.R.U.D
         internal DataTable GetAssignmentFromDatabase()

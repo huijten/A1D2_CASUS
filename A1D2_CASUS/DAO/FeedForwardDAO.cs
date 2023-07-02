@@ -11,16 +11,8 @@ using System.Threading.Tasks;
 
 namespace A1D2_CASUS.DAO
 {
-    public class FeedForwardDAO
+    public class FeedForwardDAO : Constring
     {
-       
-        //Kevin
-        //private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
-        //Ruben
-        //Ruben
-        //private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
-        //Wien
-        private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
 
         #region Getting all FeedForwards from database
         public List<FeedForward> Read()

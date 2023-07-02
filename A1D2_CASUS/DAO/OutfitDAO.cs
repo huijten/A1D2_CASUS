@@ -8,15 +8,8 @@ using System.Threading.Tasks;
 
 namespace A1D2_CASUS.DAO
 {
-    public class OutfitDAO
+    public class OutfitDAO : Constring
     {
-        //Kevin
-        //private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
-        //Ruben
-        //private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
-        //Wien
-        private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
-
         #region Getting all Outfits from database
         public List<Outfit> Read()
         {
