@@ -1,6 +1,7 @@
 ﻿using A1D2_CASUS.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,26 @@ namespace A1D2_CASUS.DAO
     public class FeedUpDAO : Constring
     {
         #region Getting all FeedUps from database
+        internal DataTable GetFups()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT f.Id, f.Feed, f.Priority, f.Reflection, fb.Id, fb.CreationDate, fb.ApprovedById, fb.AssignmentId, fb.StudentId, fb.Content FROM FeedUp f JOIN FeedBase fb ON f.Feed = fb.Id"; ;
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
+        }
         public List<FeedUp> Read()
         {
             List<FeedUp> feedups = new List<FeedUp>();
@@ -43,6 +64,26 @@ namespace A1D2_CASUS.DAO
             }
 
             return feedups;
+        }
+        public void CreateFup(FeedUp feedup)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "INSERT INTO FeedUp (Feed, Priority, Reflection) VALUES (@Feed, @Priority, @Reflection)";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@Feed", feedup.Feed.Id);
+                        command.Parameters.AddWithValue("@Priority", feedup.Priority);
+                        command.Parameters.AddWithValue("@Reflection", feedup.Reflection);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
         }
     }
     #endregion

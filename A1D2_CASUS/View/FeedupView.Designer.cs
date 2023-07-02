@@ -124,6 +124,7 @@
             createBtn.TabIndex = 49;
             createBtn.Text = "Create";
             createBtn.UseVisualStyleBackColor = true;
+            createBtn.Click += createBtn_Click;
             // 
             // loadBtn
             // 
@@ -134,6 +135,7 @@
             loadBtn.TabIndex = 39;
             loadBtn.Text = "Load";
             loadBtn.UseVisualStyleBackColor = true;
+            loadBtn.Click += loadBtn_Click;
             // 
             // notesTxtBox
             // 
@@ -291,6 +293,7 @@
             // 
             // ATBPriority
             // 
+            ATBPriority.LargeChange = 2;
             ATBPriority.Location = new Point(222, 507);
             ATBPriority.Maximum = 5;
             ATBPriority.Name = "ATBPriority";
@@ -332,6 +335,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "FeedupView";
             Text = "FeedupView";
+            Load += FeedupView_Load;
             ((System.ComponentModel.ISupportInitialize)DGVFeedup).EndInit();
             ((System.ComponentModel.ISupportInitialize)ATBPriority).EndInit();
             ResumeLayout(false);

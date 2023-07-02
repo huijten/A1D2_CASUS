@@ -109,5 +109,10 @@ namespace A1D2_CASUS.View
             MessageBox.Show("Succesfully Created!");
             LoadDataGrid();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

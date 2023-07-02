@@ -112,6 +112,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1053, 212);
             panel1.TabIndex = 3;
+            panel1.Paint += panel1_Paint;
             // 
             // CBXStudent
             // 
