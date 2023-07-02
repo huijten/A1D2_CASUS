@@ -16,12 +16,17 @@ namespace A1D2_CASUS.Model
         public string Password { get; set; }
 
         public Supervisor() { }
+
         public Supervisor(int id, string name, string workNumber, string password)
         {
             Id = id;
             Name = name;
             WorkNumber = workNumber;
             Password = password;
+        }
+        public bool validatesupervisor(string WorkNumber, string Password)
+        {
+            return db.Validatecred(WorkNumber, Password);
         }
 
         public Supervisor Search(int SupervisorId)

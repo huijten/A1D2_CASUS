@@ -32,7 +32,10 @@ namespace A1D2_CASUS.Model
             Level = xP / 5;
             Points = points;
         }
-
+        public bool validatestudent(string StudentNumber, string Password)
+        {
+            return db.Validatecred(StudentNumber, Password);
+        }
         public List<Student> Read()
         {
             return db.Read();

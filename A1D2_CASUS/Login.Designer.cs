@@ -53,7 +53,7 @@
             TXTLogin.Name = "TXTLogin";
             TXTLogin.Size = new Size(125, 27);
             TXTLogin.TabIndex = 2;
-            TXTLogin.Text = "Mibobel";
+            TXTLogin.Text = "1";
             // 
             // TXTPassword
             // 
@@ -62,7 +62,7 @@
             TXTPassword.PasswordChar = '$';
             TXTPassword.Size = new Size(125, 27);
             TXTPassword.TabIndex = 3;
-            TXTPassword.Text = "password";
+            TXTPassword.Text = "1";
             // 
             // BTNLogin
             // 
@@ -89,9 +89,9 @@
             label3.AutoSize = true;
             label3.Location = new Point(119, 117);
             label3.Name = "label3";
-            label3.Size = new Size(46, 20);
+            label3.Size = new Size(101, 20);
             label3.TabIndex = 6;
-            label3.Text = "Login";
+            label3.Text = "Login number";
             // 
             // label4
             // 
@@ -133,6 +133,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             TopMost = true;
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }

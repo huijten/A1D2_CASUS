@@ -2,6 +2,7 @@
 using A1D2_CASUS.View;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -12,14 +13,17 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace A1D2_CASUS.DAO
 {
+
     public class AssignmentDAO
     {
+        
+
         //Kevin
-        private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
+        //private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
         //Ruben
         //private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
         //Wien
-        //private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
+        private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
 
         #region C.R.U.D
         internal DataTable GetAssignmentFromDatabase()

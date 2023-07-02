@@ -266,6 +266,7 @@
             paddingNavPanel.Name = "paddingNavPanel";
             paddingNavPanel.Size = new Size(253, 20);
             paddingNavPanel.TabIndex = 1;
+            paddingNavPanel.Paint += paddingNavPanel_Paint;
             // 
             // userPanel
             // 

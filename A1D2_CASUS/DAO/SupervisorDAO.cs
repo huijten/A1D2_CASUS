@@ -11,12 +11,31 @@ namespace A1D2_CASUS.DAO
     public class SupervisorDAO
     {
         //Kevin
-        private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
+        //private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
         //Ruben
         //private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
         //Wien
-        //private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
+        private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
 
+        public bool Validatecred(string WorkNumber, string Password)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM Supervisor WHERE WorkNumber = @WorkNumber AND Password = @Password";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@WorkNumber", WorkNumber);
+                    command.Parameters.AddWithValue("@Password", Password);
+
+                    connection.Open();
+
+                    int result = (int)command.ExecuteScalar();
+
+                    return result > 0;
+                }
+            }
+        }
         public Supervisor Search(int supervisorId)
         {
             using (SqlConnection cnn = new SqlConnection(connectionString))

@@ -74,5 +74,10 @@ namespace A1D2_CASUS
         {
             this.Close();
         }
+
+        private void paddingNavPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

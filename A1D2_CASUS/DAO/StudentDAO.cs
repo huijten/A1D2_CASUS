@@ -6,18 +6,40 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace A1D2_CASUS.DAO
 {
     public class StudentDAO
     {
+        
         //Kevin
-        private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
+        //private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
         //Ruben
         //private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
         //Wien
-        //private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
+        private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
 
+        public bool Validatecred(string StudentNumber, string Password)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM Student WHERE StudentNumber = @StudentNumber AND Password = @Password";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@StudentNumber", StudentNumber);
+                    command.Parameters.AddWithValue("@Password", Password);
+
+                    connection.Open();
+
+                    int result = (int)command.ExecuteScalar();
+
+                    return result > 0;
+                }
+            }
+        }
         #region Getting all students from database
         public List<Student> Read()
         {

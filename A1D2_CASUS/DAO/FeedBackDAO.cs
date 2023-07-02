@@ -12,11 +12,11 @@ namespace A1D2_CASUS.DAO
     public class FeedBackDAO
     {
         //Kevin
-        private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
+        //private string connectionString = @"Server=COMPUTER\SQLEXPRESS; Database=Gamification; Trusted_Connection=True";
         //Ruben
         //private string connectionString = @"Data Source=MSI;Initial Catalog=Gamification;Integrated Security=True";
         //Wien
-        //private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
+        private string connectionString = @"Server=.; Database=Gamification; Trusted_Connection=True";
 
         #region Getting all Feedbacks from database
         public List<FeedBack> Read()
