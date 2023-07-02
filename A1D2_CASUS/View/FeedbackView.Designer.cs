@@ -49,12 +49,16 @@
             label2 = new Label();
             label1 = new Label();
             feedBackDataGridView = new DataGridView();
+            button1 = new Button();
+            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)feedBackDataGridView).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(CBXStudent);
             panel1.Controls.Add(CBXSupervisor);
             panel1.Controls.Add(TXTContent);
@@ -184,7 +188,7 @@
             // 
             // createBtn
             // 
-            createBtn.Location = new Point(841, 141);
+            createBtn.Location = new Point(765, 138);
             createBtn.Margin = new Padding(3, 4, 3, 4);
             createBtn.Name = "createBtn";
             createBtn.Size = new Size(86, 31);
@@ -213,7 +217,7 @@
             // 
             // TXTNotes
             // 
-            TXTNotes.Location = new Point(769, 38);
+            TXTNotes.Location = new Point(765, 38);
             TXTNotes.Margin = new Padding(3, 4, 3, 4);
             TXTNotes.Name = "TXTNotes";
             TXTNotes.Size = new Size(228, 93);
@@ -268,6 +272,24 @@
             feedBackDataGridView.Size = new Size(1045, 328);
             feedBackDataGridView.TabIndex = 1;
             // 
+            // button1
+            // 
+            button1.Location = new Point(857, 138);
+            button1.Name = "button1";
+            button1.Size = new Size(74, 29);
+            button1.TabIndex = 27;
+            button1.Text = "Edit";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(937, 138);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 28;
+            button2.Text = "Remove";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // FeedbackView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -308,5 +330,7 @@
         private ComboBox CBXStudent;
         private ComboBox CBXSupervisor;
         private TextBox TXTContent;
+        private Button button2;
+        private Button button1;
     }
 }

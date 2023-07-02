@@ -101,9 +101,10 @@ namespace A1D2_CASUS.View
             Assignment asif = asi.Search(a);
             FeedBase fb = new FeedBase(tijd, supvis,
             asif, stu, TXTContent.Text);
+            string Not = TXTNotes.Text;
             fbb.CreateFeedbas(fb);
             FeedBase fbss = fb.SearchByAssignment(a);
-            FeedBack fdb = new FeedBack(0, fbss, TXTNotes.Text);
+            FeedBack fdb = new FeedBack(0, fbss, Not);
             fdb.MakeFeedback(fdb);
 
         }

@@ -20,6 +20,8 @@ namespace A1D2_CASUS.View
             PopulateComboBox();
             ResetLabels();
             LoadDataGrid();
+            FillCBXStudent();
+            FillCBXSupervisor();
         }
 
         private void LoadDataGrid()
@@ -37,7 +39,26 @@ namespace A1D2_CASUS.View
             studentLbl.Text = "";
             assignmentLbl.Text = "";
         }
+        public void FillCBXStudent()
+        {
+            var bind = new BindingSource();
+            Student db = new Student();
 
+            bind.DataSource = db.GetStudents();
+            CBXStudent.DataSource = bind;
+            CBXStudent.DisplayMember = "Name";
+            CBXStudent.ValueMember = "Id";
+        }
+        public void FillCBXSupervisor()
+        {
+            var binda = new BindingSource();
+            Supervisor db = new Supervisor();
+
+            binda.DataSource = db.GetSupervisors();
+            CBXSupervisor.DataSource = binda;
+            CBXSupervisor.DisplayMember = "Name";
+            CBXSupervisor.ValueMember = "Id";
+        }
         private void PopulateComboBox()
         {
             var bindingSourceAssignment = new BindingSource();
@@ -67,7 +88,23 @@ namespace A1D2_CASUS.View
 
         private void createBtn_Click(object sender, EventArgs e)
         {
-            FeedForward ff = new FeedForward(0, FBase, notesTxtBox.Text);
+            Assignment asi = new Assignment();
+            Supervisor db = new Supervisor();
+            FeedBase fbb = new FeedBase();
+            Student stud = new Student();
+            DateTime tijd = DateTime.Now;
+            int ins = Int32.Parse(CBXSupervisor.SelectedValue.ToString());
+            Supervisor supvis = db.Search(ins);
+            int s = Int32.Parse(CBXStudent.SelectedValue.ToString());
+            Student stu = stud.Search(s);
+            int a = Int32.Parse(assignmentComboBox.SelectedValue.ToString());
+            Assignment asif = asi.Search(a);
+            FeedBase fb = new FeedBase(tijd, supvis,
+            asif, stu, TXTContent.Text);
+            string Not = notesTxtBox.Text;
+            fbb.CreateFeedbas(fb);
+            FeedBase fbss = fb.SearchByAssignment(a);
+            FeedForward ff = new FeedForward(0, fbss, Not);
             ff.Create(ff);
             MessageBox.Show("Succesfully Created!");
             LoadDataGrid();
