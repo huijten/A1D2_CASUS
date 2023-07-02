@@ -41,6 +41,10 @@
             BTNCreate = new Button();
             BTNUpdate = new Button();
             BTNDelete = new Button();
+            label7 = new Label();
+            label6 = new Label();
+            CBXSupervisor = new ComboBox();
+            CBXStudent = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)DGVAssignment).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ATBPoints).BeginInit();
             SuspendLayout();
@@ -81,7 +85,7 @@
             // 
             // ATBPoints
             // 
-            ATBPoints.Location = new Point(576, 489);
+            ATBPoints.Location = new Point(577, 486);
             ATBPoints.Name = "ATBPoints";
             ATBPoints.Size = new Size(130, 56);
             ATBPoints.TabIndex = 10;
@@ -172,11 +176,53 @@
             BTNDelete.UseVisualStyleBackColor = true;
             BTNDelete.Click += BTNDelete_Click;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(325, 533);
+            label7.Name = "label7";
+            label7.Size = new Size(87, 20);
+            label7.TabIndex = 20;
+            label7.Text = "Assigned to";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(29, 536);
+            label6.Name = "label6";
+            label6.Size = new Size(95, 20);
+            label6.TabIndex = 21;
+            label6.Text = "Approved by";
+            // 
+            // CBXSupervisor
+            // 
+            CBXSupervisor.DisplayMember = "Name";
+            CBXSupervisor.FormattingEnabled = true;
+            CBXSupervisor.Location = new Point(150, 533);
+            CBXSupervisor.Name = "CBXSupervisor";
+            CBXSupervisor.Size = new Size(151, 28);
+            CBXSupervisor.TabIndex = 22;
+            CBXSupervisor.ValueMember = "Id";
+            // 
+            // CBXStudent
+            // 
+            CBXStudent.DisplayMember = "Name";
+            CBXStudent.FormattingEnabled = true;
+            CBXStudent.Location = new Point(420, 533);
+            CBXStudent.Name = "CBXStudent";
+            CBXStudent.Size = new Size(151, 28);
+            CBXStudent.TabIndex = 23;
+            CBXStudent.ValueMember = "Id";
+            // 
             // AssignmentView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1062, 575);
+            Controls.Add(CBXStudent);
+            Controls.Add(CBXSupervisor);
+            Controls.Add(label6);
+            Controls.Add(label7);
             Controls.Add(BTNDelete);
             Controls.Add(BTNUpdate);
             Controls.Add(BTNCreate);
@@ -215,5 +261,9 @@
         private Button BTNCreate;
         private Button BTNUpdate;
         private Button BTNDelete;
+        private Label label7;
+        private Label label6;
+        private ComboBox CBXSupervisor;
+        private ComboBox CBXStudent;
     }
 }

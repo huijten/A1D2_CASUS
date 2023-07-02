@@ -1,6 +1,7 @@
 ﻿using A1D2_CASUS.DAO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,11 @@ namespace A1D2_CASUS.Model
             Name = name;
             WorkNumber = workNumber;
             Password = password;
+        }
+
+        public DataTable GetSupervisors()
+        {
+            return db.GetSupervisorsFromDatabase();
         }
         public bool validatesupervisor(string WorkNumber, string Password)
         {

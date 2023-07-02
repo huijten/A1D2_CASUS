@@ -15,15 +15,16 @@ namespace A1D2_CASUS.View
 {
     public partial class AssignmentView : Form
     {
+        #region loading&filling&populating
         public AssignmentView()
         {
             InitializeComponent();
         }
         private void AssignmentView_Load(object sender, EventArgs e)
         {
-            Assignment asgnmt = new Assignment();
-            DataTable Asgnmt = asgnmt.Get2d4bAsnmt();
-            DGVAssignment.DataSource = Asgnmt;
+            RefreshDGVAs();
+            FillCBXSupervisor();
+            FillCBXStudent();
         }
         public void RefreshDGVAs()
         {
@@ -33,7 +34,29 @@ namespace A1D2_CASUS.View
             DGVAssignment.DataSource = Asgnmt;
             DGVAssignment.ResetBindings();
         }
-        # region CRud
+        public void FillCBXStudent()
+        {
+            var bind = new BindingSource();
+            Student db = new Student();
+            bind.DataSource = null;
+            bind.DataSource = db.GetStudents();
+            CBXStudent.DataSource = db.GetStudents();
+            CBXStudent.DisplayMember = "Name";
+            CBXStudent.ValueMember = "Id";
+        }
+        public void FillCBXSupervisor()
+        {
+            var binda = new BindingSource();
+            Supervisor db = new Supervisor();
+            binda.DataSource = null;
+            binda.DataSource = db.GetSupervisors();
+            CBXSupervisor.DataSource = db.GetSupervisors();
+            CBXSupervisor.DisplayMember = "Name";
+            CBXSupervisor.ValueMember = "Id";
+        }
+#endregion
+
+        #region CRud
         private void BTNCreate_Click(object sender, EventArgs e)
         {
             Assignment asnt = new Assignment(

@@ -1,6 +1,7 @@
 ﻿using A1D2_CASUS.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,26 @@ namespace A1D2_CASUS.DAO
     public class SupervisorDAO : Constring
     {
 
+        internal DataTable GetSupervisorsFromDatabase()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM Supervisor"; 
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
+        }
         public bool Validatecred(string WorkNumber, string Password)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

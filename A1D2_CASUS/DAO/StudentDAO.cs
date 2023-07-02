@@ -8,12 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Data;
 
 namespace A1D2_CASUS.DAO
 {
     public class StudentDAO : Constring
     {
 
+        internal DataTable GetemStudents()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM Student";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
+        }
         public bool Validatecred(string StudentNumber, string Password)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

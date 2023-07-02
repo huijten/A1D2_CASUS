@@ -65,5 +65,15 @@ namespace A1D2_CASUS.View
 
             PopulateData(Int32.Parse(assignmentComboBox.SelectedValue.ToString()));
         }
+
+        private void createBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void assignmentComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
