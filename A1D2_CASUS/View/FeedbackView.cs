@@ -19,6 +19,8 @@ namespace A1D2_CASUS.View
             PopulateComboBox();
             ResetLabels();
             LoadDataGrid();
+            FillCBXSupervisor();
+            FillCBXStudent();
         }
 
         private void LoadDataGrid()
@@ -46,7 +48,26 @@ namespace A1D2_CASUS.View
             assignmentComboBox.DisplayMember = "Name";
             assignmentComboBox.ValueMember = "Id";
         }
-
+        public void FillCBXStudent()
+        {
+            var bind = new BindingSource();
+            Student db = new Student();
+            
+            bind.DataSource = db.GetStudents();
+            CBXStudent.DataSource = bind;
+            CBXStudent.DisplayMember = "Name";
+            CBXStudent.ValueMember = "Id";
+        }
+        public void FillCBXSupervisor()
+        {
+            var binda = new BindingSource();
+            Supervisor db = new Supervisor();
+            
+            binda.DataSource = db.GetSupervisors();
+            CBXSupervisor.DataSource = binda;
+            CBXSupervisor.DisplayMember = "Name";
+            CBXSupervisor.ValueMember = "Id";
+        }
         private void PopulateData(int assignmentId)
         {
             FeedBase db = new FeedBase();
@@ -68,7 +89,20 @@ namespace A1D2_CASUS.View
 
         private void createBtn_Click(object sender, EventArgs e)
         {
-
+            Assignment asi = new Assignment();
+            Supervisor db = new Supervisor();
+            FeedBase fbb = new FeedBase();
+            Student stud = new Student();
+            DateTime tijd = DateTime.Now;
+            int ins = Int32.Parse(CBXSupervisor.SelectedValue.ToString()) ;
+            Supervisor supvis = db.Search(ins);
+            int s = Int32.Parse(CBXStudent.SelectedValue.ToString());
+            Student stu = stud.Search(s);
+            int a = Int32.Parse (assignmentComboBox.SelectedValue.ToString());
+            Assignment asif = asi.Search(a);
+            FeedBase fb = new FeedBase( tijd,  supvis,
+            asif, stu, TXTContent.Text);
+            fbb.CreateFeedbas(fb);
         }
 
         private void assignmentComboBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -46,12 +46,18 @@
             label2 = new Label();
             label1 = new Label();
             feedBackDataGridView = new DataGridView();
+            CBXStudent = new ComboBox();
+            CBXSupervisor = new ComboBox();
+            TXTContent = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)feedBackDataGridView).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(CBXStudent);
+            panel1.Controls.Add(CBXSupervisor);
+            panel1.Controls.Add(TXTContent);
             panel1.Controls.Add(LoadBtn);
             panel1.Controls.Add(contentLbl);
             panel1.Controls.Add(label7);
@@ -88,7 +94,7 @@
             // contentLbl
             // 
             contentLbl.AutoSize = true;
-            contentLbl.Location = new Point(301, 73);
+            contentLbl.Location = new Point(301, 49);
             contentLbl.Name = "contentLbl";
             contentLbl.Size = new Size(50, 20);
             contentLbl.TabIndex = 17;
@@ -106,7 +112,7 @@
             // studentLbl
             // 
             studentLbl.AutoSize = true;
-            studentLbl.Location = new Point(577, 131);
+            studentLbl.Location = new Point(565, 167);
             studentLbl.Name = "studentLbl";
             studentLbl.Size = new Size(50, 20);
             studentLbl.TabIndex = 16;
@@ -134,7 +140,7 @@
             // supervisorLbl
             // 
             supervisorLbl.AutoSize = true;
-            supervisorLbl.Location = new Point(577, 21);
+            supervisorLbl.Location = new Point(788, 21);
             supervisorLbl.Name = "supervisorLbl";
             supervisorLbl.Size = new Size(17, 20);
             supervisorLbl.TabIndex = 14;
@@ -172,7 +178,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(213, 77);
+            label5.Location = new Point(175, 73);
             label5.Name = "label5";
             label5.Size = new Size(67, 20);
             label5.TabIndex = 10;
@@ -235,6 +241,33 @@
             feedBackDataGridView.Size = new Size(1045, 316);
             feedBackDataGridView.TabIndex = 1;
             // 
+            // CBXStudent
+            // 
+            CBXStudent.DisplayMember = "Name";
+            CBXStudent.FormattingEnabled = true;
+            CBXStudent.Location = new Point(550, 128);
+            CBXStudent.Name = "CBXStudent";
+            CBXStudent.Size = new Size(151, 28);
+            CBXStudent.TabIndex = 26;
+            CBXStudent.ValueMember = "Id";
+            // 
+            // CBXSupervisor
+            // 
+            CBXSupervisor.DisplayMember = "Name";
+            CBXSupervisor.FormattingEnabled = true;
+            CBXSupervisor.Location = new Point(550, 13);
+            CBXSupervisor.Name = "CBXSupervisor";
+            CBXSupervisor.Size = new Size(151, 28);
+            CBXSupervisor.TabIndex = 25;
+            CBXSupervisor.ValueMember = "Id";
+            // 
+            // TXTContent
+            // 
+            TXTContent.Location = new Point(248, 73);
+            TXTContent.Name = "TXTContent";
+            TXTContent.Size = new Size(202, 27);
+            TXTContent.TabIndex = 24;
+            // 
             // FeedbackView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -272,5 +305,8 @@
         private Label label7;
         private Button LoadBtn;
         private DataGridView feedBackDataGridView;
+        private ComboBox CBXStudent;
+        private ComboBox CBXSupervisor;
+        private TextBox TXTContent;
     }
 }

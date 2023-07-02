@@ -16,16 +16,16 @@ namespace A1D2_CASUS.DAO
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string sql = "INSERT INTO FeedBase (CreationDate, approvedBy, assignment, student, content) VALUES (@CreationDate, @ApprovedById, @AssignmentId, @StudentId, @Content)";
+                    string sql = "INSERT INTO FeedBase (CreationDate, ApprovedById, AssignmentId, StudentId, content) VALUES (@CreationDate, @ApprovedBy, @AssignmentId, @StudentId, @Content)";
                     
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(sql, connection))
 
                     {
                         command.Parameters.AddWithValue("@CreationDate", feedbas.CreationDate);
-                        command.Parameters.AddWithValue("@ApprovedById", feedbas.ApprovedBy);
-                        command.Parameters.AddWithValue("@AssignmentId", feedbas.Assignment);
-                        command.Parameters.AddWithValue("@StudentId", feedbas.Student);
+                        command.Parameters.AddWithValue("@ApprovedBy", feedbas.ApprovedBy.Id);
+                        command.Parameters.AddWithValue("@AssignmentId", feedbas.Assignment.Id);
+                        command.Parameters.AddWithValue("@StudentId", feedbas.Student.Id);
                         command.Parameters.AddWithValue("@Content", feedbas.Content);
                         command.ExecuteNonQuery();
                     }

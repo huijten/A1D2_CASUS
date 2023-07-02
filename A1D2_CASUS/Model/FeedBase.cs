@@ -28,6 +28,14 @@ namespace A1D2_CASUS.Model
             Student = student;
             Content = content;
         }
+        public FeedBase( DateTime creationDate, Supervisor approvedBy, Assignment assignment, Student student, string content)
+        {
+            CreationDate = creationDate;
+            ApprovedBy = approvedBy;
+            Assignment = assignment;
+            Student = student;
+            Content = content;
+        }
         public void CreateFeedbas(FeedBase feedbas)
         {
             db.CreateFBS(feedbas);

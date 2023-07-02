@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            button1 = new Button();
-            richTextBox1 = new RichTextBox();
-            comboBox1 = new ComboBox();
-            listBox1 = new ListBox();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -47,68 +41,16 @@
             label1.TabIndex = 0;
             label1.Text = "DashboardView";
             // 
-            // button1
-            // 
-            button1.Location = new Point(217, 393);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(544, 408);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(125, 120);
-            richTextBox1.TabIndex = 2;
-            richTextBox1.Text = "";
-            // 
-            // comboBox1
-            // 
-            comboBox1.DisplayMember = "Name";
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(359, 408);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 3;
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(763, 423);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(150, 104);
-            listBox1.TabIndex = 4;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(54, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(615, 247);
-            dataGridView1.TabIndex = 5;
-            // 
             // DashboardView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1062, 575);
-            Controls.Add(dataGridView1);
-            Controls.Add(listBox1);
-            Controls.Add(comboBox1);
-            Controls.Add(richTextBox1);
-            Controls.Add(button1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "DashboardView";
             Text = "DashboardView";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,10 +58,5 @@
         #endregion
 
         private Label label1;
-        private Button button1;
-        private RichTextBox richTextBox1;
-        private ComboBox comboBox1;
-        private ListBox listBox1;
-        private DataGridView dataGridView1;
     }
 }
