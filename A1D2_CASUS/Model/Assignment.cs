@@ -34,6 +34,10 @@ namespace A1D2_CASUS.Model
             Points = points;
         }
 
+        public Assignment Getlastassign()
+        {
+            return db.GetLast();
+        }
         public Assignment Search(int Id)
         {
             return db.Search(Id);

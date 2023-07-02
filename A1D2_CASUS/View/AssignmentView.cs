@@ -40,7 +40,7 @@ namespace A1D2_CASUS.View
             Student db = new Student();
             bind.DataSource = null;
             bind.DataSource = db.GetStudents();
-            CBXStudent.DataSource = db.GetStudents();
+            CBXStudent.DataSource = bind;
             CBXStudent.DisplayMember = "Name";
             CBXStudent.ValueMember = "Id";
         }
@@ -50,7 +50,7 @@ namespace A1D2_CASUS.View
             Supervisor db = new Supervisor();
             binda.DataSource = null;
             binda.DataSource = db.GetSupervisors();
-            CBXSupervisor.DataSource = db.GetSupervisors();
+            CBXSupervisor.DataSource = binda;
             CBXSupervisor.DisplayMember = "Name";
             CBXSupervisor.ValueMember = "Id";
         }
@@ -59,12 +59,22 @@ namespace A1D2_CASUS.View
         #region CRud
         private void BTNCreate_Click(object sender, EventArgs e)
         {
+            Supervisor db = new Supervisor();
+            FeedBase fbb = new FeedBase();
             Assignment asnt = new Assignment(
                 ATXTName.Text,
                 ADTPDeadline.Value,
                 ACBCompleted.Checked,
                 ATBPoints.Value);
             asnt.CreateAsnmt(asnt);
+            Assignment ast = new Assignment();
+           // DateTime tijd = DateTime.Today;
+            //int t = CBXSupervisor.SelectedValue.; Supervisor super = new Supervisor(); 
+           // Supervisor deze = super.Search(t);
+            //var s = CBXStudent.SelectedValue;
+           // FeedBase fb = new FeedBase(0, tijd, CBXSupervisor.SelectedValue as Supervisor,
+            //ast.Getlastassign(), CBXStudent.SelectedItem as Student, ATXTName.Text);
+           // fbb.CreateFeedbas(fb);
             RefreshDGVAs();
         }
         private void BTNUpdate_Click(object sender, EventArgs e)

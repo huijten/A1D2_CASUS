@@ -102,6 +102,36 @@ namespace A1D2_CASUS.DAO
         #endregion
 
         #region Search
+
+        internal Assignment GetLast()
+        {
+            List<Assignment> list = new List<Assignment>();
+            using (SqlConnection cnn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cnn.ConnectionString = connectionString;
+                    cnn.Open();
+                    cmd.Connection = cnn;
+                    cmd.CommandText = "SELECT TOP 1 * FROM Assignment ORDER BY Id DESC";
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                        while (reader.Read())
+                        {
+                            list.Clear();
+                            int id = reader.GetInt32(0);
+                            string name = reader.GetString(1);
+                            DateTime date = reader.GetDateTime(2);
+                            bool isCompleted = reader.GetBoolean(3);
+                            int points = reader.GetInt32(4);
+                            Assignment assignment = new Assignment(id, name, date, isCompleted, points);
+                            list.Add(assignment);
+                        }
+                    return list.FirstOrDefault();
+                }
+
+                
+            }
+        }
         public Assignment Search(int assignmentId)
         {
             using (SqlConnection cnn = new SqlConnection(connectionString))

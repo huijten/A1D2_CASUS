@@ -28,12 +28,14 @@ namespace A1D2_CASUS.Model
             Student = student;
             Content = content;
         }
-
+        public void CreateFeedbas(FeedBase feedbas)
+        {
+            db.CreateFBS(feedbas);
+        }
         public FeedBase Search(int id)
         {
             return db.Search(id);
         }
-
         public FeedBase SearchByAssignment(int id)
         {
             return db.SearchByAssignment(id);

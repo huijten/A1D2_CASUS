@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A1D2_CASUS.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,13 @@ namespace A1D2_CASUS.View
             InitializeComponent();
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AssignmentDAO dAO = new AssignmentDAO();
+            listBox1.DisplayMember = "Name";
+            listBox1.DataSource = dAO.GetLast();
+            comboBox1.Items.Add(dAO.GetLast());
+            dataGridView1.DataSource = dAO.GetLast();
+        }
     }
 }

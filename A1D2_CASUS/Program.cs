@@ -14,7 +14,7 @@ namespace A1D2_CASUS
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             
-            Application.Run(new Login());
+            Application.Run(new Dashboard());
         }
        
     }

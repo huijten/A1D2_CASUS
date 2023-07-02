@@ -10,6 +10,29 @@ namespace A1D2_CASUS.DAO
 {
     public class FeedBaseDAO : Constring
     {
+        internal void CreateFBS(FeedBase feedbas)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "INSERT INTO FeedBase (CreationDate, approvedBy, assignment, student, content) VALUES (@CreationDate, @ApprovedById, @AssignmentId, @StudentId, @Content)";
+                    
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+
+                    {
+                        command.Parameters.AddWithValue("@CreationDate", feedbas.CreationDate);
+                        command.Parameters.AddWithValue("@ApprovedById", feedbas.ApprovedBy);
+                        command.Parameters.AddWithValue("@AssignmentId", feedbas.Assignment);
+                        command.Parameters.AddWithValue("@StudentId", feedbas.Student);
+                        command.Parameters.AddWithValue("@Content", feedbas.Content);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+        }
 
         #region Search Database
         public FeedBase Search(int feedBaseId)

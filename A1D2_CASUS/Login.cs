@@ -47,9 +47,5 @@ namespace A1D2_CASUS
             }
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
