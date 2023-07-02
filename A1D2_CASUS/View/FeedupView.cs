@@ -27,7 +27,7 @@ namespace A1D2_CASUS.View
         {
             ResetLabels();
         }
-        
+
         private void LoadDataGrid()
         {
             FeedUp fd = new FeedUp();
@@ -110,10 +110,38 @@ namespace A1D2_CASUS.View
             MessageBox.Show("FeedUp Created!");
             LoadDataGrid();
         }
+        
 
         private void loadBtn_Click(object sender, EventArgs e)
         {
             PopulateData(Int32.Parse(assignmentComboBox.SelectedValue.ToString()));
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Assignment asi = new Assignment();
+            FeedUp asignmte = new FeedUp();
+            int id = Convert.ToInt32(DGVFeedup.SelectedRows[0].Cells["Id"].Value);
+            string Notes = TXTContent.Text;
+            int a = Int32.Parse(assignmentComboBox.SelectedValue.ToString());
+            Assignment asif = asi.Search(a);
+            FeedBase fb = new FeedBase();
+            FeedBase fbss = fb.SearchByAssignment(a);
+            string Not = notesTxtBox.Text;
+            FeedUp fu = new FeedUp(0, fbss, ATBPriority.Value, Not);
+            asignmte.EditFeedup(id, fbss, ATBPriority.Value, Not);
+            MessageBox.Show("Feed edited!");
+            LoadDataGrid();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Assignment asi = new Assignment();
+            FeedForward asignmte = new FeedForward();
+            int id = Convert.ToInt32(DGVFeedup.SelectedRows[0].Cells["Id"].Value);
+            asignmte.DeleteFF(id);
+            MessageBox.Show("Feed deleted!");
+            LoadDataGrid();
         }
     }
 }

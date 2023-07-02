@@ -33,5 +33,13 @@ namespace A1D2_CASUS.Model
         {
             db.CreateFup(feedup);
         }
+        internal void EditFeedup(int id, FeedBase Feed, int Priority, string Reflection)
+        {
+            db.EditFU(id, Feed, Priority,Reflection);
+        }
+        internal void Delfedup(int id)
+        {
+            db.DelFU(id);
+        }
     }
 }

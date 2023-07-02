@@ -32,8 +32,6 @@
             CBXStudent = new ComboBox();
             CBXSupervisor = new ComboBox();
             TXTContent = new TextBox();
-            button2 = new Button();
-            button1 = new Button();
             createBtn = new Button();
             loadBtn = new Button();
             notesTxtBox = new RichTextBox();
@@ -54,6 +52,8 @@
             label9 = new Label();
             label10 = new Label();
             ATBPriority = new TrackBar();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)DGVFeedup).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ATBPriority).BeginInit();
             SuspendLayout();
@@ -64,9 +64,11 @@
             DGVFeedup.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVFeedup.Location = new Point(12, 13);
             DGVFeedup.Margin = new Padding(3, 4, 3, 4);
+            DGVFeedup.MultiSelect = false;
             DGVFeedup.Name = "DGVFeedup";
             DGVFeedup.RowHeadersWidth = 51;
             DGVFeedup.RowTemplate.Height = 25;
+            DGVFeedup.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGVFeedup.Size = new Size(1034, 359);
             DGVFeedup.TabIndex = 5;
             // 
@@ -96,24 +98,6 @@
             TXTContent.Name = "TXTContent";
             TXTContent.Size = new Size(202, 27);
             TXTContent.TabIndex = 52;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(929, 531);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 51;
-            button2.Text = "Remove";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(849, 531);
-            button1.Name = "button1";
-            button1.Size = new Size(74, 29);
-            button1.TabIndex = 50;
-            button1.Text = "Edit";
-            button1.UseVisualStyleBackColor = true;
             // 
             // createBtn
             // 
@@ -300,11 +284,33 @@
             ATBPriority.Size = new Size(130, 56);
             ATBPriority.TabIndex = 56;
             // 
+            // button1
+            // 
+            button1.Location = new Point(837, 535);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 59;
+            button1.Text = "Edit";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(927, 535);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 60;
+            button2.Text = "Remove";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
+            // 
             // FeedupView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1062, 575);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(label8);
             Controls.Add(label9);
             Controls.Add(label10);
@@ -312,8 +318,6 @@
             Controls.Add(CBXStudent);
             Controls.Add(CBXSupervisor);
             Controls.Add(TXTContent);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(createBtn);
             Controls.Add(loadBtn);
             Controls.Add(notesTxtBox);
@@ -348,8 +352,6 @@
         private ComboBox CBXStudent;
         private ComboBox CBXSupervisor;
         private TextBox TXTContent;
-        private Button button2;
-        private Button button1;
         private Button createBtn;
         private Button loadBtn;
         private RichTextBox notesTxtBox;
@@ -370,5 +372,7 @@
         private Label label9;
         private Label label10;
         private TrackBar ATBPriority;
+        private Button button1;
+        private Button button2;
     }
 }

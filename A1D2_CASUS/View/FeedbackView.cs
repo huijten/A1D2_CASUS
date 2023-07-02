@@ -106,12 +106,33 @@ namespace A1D2_CASUS.View
             FeedBase fbss = fb.SearchByAssignment(a);
             FeedBack fdb = new FeedBack(0, fbss, Not);
             fdb.MakeFeedback(fdb);
+            MessageBox.Show("Succesfully Created!");
+            LoadDataGrid();
 
         }
-
-        private void assignmentComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            Assignment asi = new Assignment();
+            FeedBack asignmte = new FeedBack();
+            int id = Convert.ToInt32(feedBackDataGridView.SelectedRows[0].Cells["Id"].Value);
+            string Notes = TXTNotes.Text;
+            int a = Int32.Parse(assignmentComboBox.SelectedValue.ToString());
+            Assignment asif = asi.Search(a);
+            FeedBase fb = new FeedBase();
+            FeedBase fbss = fb.SearchByAssignment(a);
+            asignmte.EditFeedback(id, fbss, Notes);
+            MessageBox.Show("Succesfully Edited!");
+            LoadDataGrid();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Assignment asi = new Assignment();
+            FeedBack asignmte = new FeedBack();
+            int id = Convert.ToInt32(feedBackDataGridView.SelectedRows[0].Cells["Id"].Value);
+            asignmte.Delfedback(id);
+            MessageBox.Show("Succesfully Removed!");
+            LoadDataGrid();
         }
     }
 }

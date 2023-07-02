@@ -32,11 +32,11 @@
             assignmentComboBox = new ComboBox();
             loadBtn = new Button();
             panel1 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             CBXStudent = new ComboBox();
             CBXSupervisor = new ComboBox();
             TXTContent = new TextBox();
-            button2 = new Button();
-            button1 = new Button();
             createBtn = new Button();
             notesTxtBox = new RichTextBox();
             label7 = new Label();
@@ -86,11 +86,11 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(CBXStudent);
             panel1.Controls.Add(CBXSupervisor);
             panel1.Controls.Add(TXTContent);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(createBtn);
             panel1.Controls.Add(loadBtn);
             panel1.Controls.Add(notesTxtBox);
@@ -112,7 +112,26 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1053, 212);
             panel1.TabIndex = 3;
-            panel1.Paint += panel1_Paint;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(948, 157);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 35;
+            button2.Text = "Remove";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(848, 160);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 34;
+            button1.Text = "Edit";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // CBXStudent
             // 
@@ -140,24 +159,6 @@
             TXTContent.Name = "TXTContent";
             TXTContent.Size = new Size(202, 27);
             TXTContent.TabIndex = 31;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(940, 157);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 30;
-            button2.Text = "Remove";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(860, 157);
-            button1.Name = "button1";
-            button1.Size = new Size(74, 29);
-            button1.TabIndex = 29;
-            button1.Text = "Edit";
-            button1.UseVisualStyleBackColor = true;
             // 
             // createBtn
             // 
@@ -284,9 +285,11 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(14, 16);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1034, 344);
             dataGridView1.TabIndex = 4;
             // 
@@ -327,10 +330,10 @@
         private RichTextBox notesTxtBox;
         private Label label7;
         private DataGridView dataGridView1;
-        private Button button2;
-        private Button button1;
         private ComboBox CBXStudent;
         private ComboBox CBXSupervisor;
         private TextBox TXTContent;
+        private Button button1;
+        private Button button2;
     }
 }

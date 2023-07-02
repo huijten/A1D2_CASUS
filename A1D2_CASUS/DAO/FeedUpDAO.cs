@@ -85,6 +85,43 @@ namespace A1D2_CASUS.DAO
             }
             catch (SqlException ex) { throw ex; }
         }
+        internal void EditFU(int id, FeedBase Feed, int Priority, string Reflection)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "UPDATE FeedUp SET Feed = @Feed, Priority = @Priority, Reflection = @Reflection WHERE id = @Id ";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", id);
+                        command.Parameters.AddWithValue("@Feed", Feed.Id);
+                        command.Parameters.AddWithValue("@Priority", Priority);
+                        command.Parameters.AddWithValue("@Reflection", Reflection);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+        }
+        internal void DelFU(int Id)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "DELETE FeedUp WHERE Id = @Id";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", Id);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+        }
     }
     #endregion
 }

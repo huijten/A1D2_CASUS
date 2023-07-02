@@ -26,6 +26,14 @@ namespace A1D2_CASUS.Model
         {
             db.ApplyFeedback(feeddback);
         }
+        internal void EditFeedback(int id, FeedBase Feed, string Notes)
+        {
+            db.EditFeedback(id, Feed, Notes);
+        }
+        internal void Delfedback(int id)
+        {
+            db.Delfedback(id);
+        }
         internal DataTable Get2d4bAsnmt()
         {
             return db.GetFeedBackDataTable();

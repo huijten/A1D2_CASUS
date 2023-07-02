@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
             CBXStudent = new ComboBox();
             CBXSupervisor = new ComboBox();
             TXTContent = new TextBox();
@@ -49,8 +51,6 @@
             label2 = new Label();
             label1 = new Label();
             feedBackDataGridView = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)feedBackDataGridView).BeginInit();
             SuspendLayout();
@@ -83,6 +83,26 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1056, 205);
             panel1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(937, 138);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 28;
+            button2.Text = "Remove";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(857, 138);
+            button1.Name = "button1";
+            button1.Size = new Size(74, 29);
+            button1.TabIndex = 27;
+            button1.Text = "Edit";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // CBXStudent
             // 
@@ -157,7 +177,6 @@
             assignmentComboBox.Name = "assignmentComboBox";
             assignmentComboBox.Size = new Size(143, 28);
             assignmentComboBox.TabIndex = 1;
-            assignmentComboBox.SelectedIndexChanged += assignmentComboBox_SelectedIndexChanged;
             // 
             // assignmentLbl
             // 
@@ -264,31 +283,15 @@
             // 
             feedBackDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             feedBackDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            feedBackDataGridView.Location = new Point(5, 44);
+            feedBackDataGridView.Location = new Point(5, 27);
             feedBackDataGridView.Margin = new Padding(3, 4, 3, 4);
+            feedBackDataGridView.MultiSelect = false;
             feedBackDataGridView.Name = "feedBackDataGridView";
             feedBackDataGridView.RowHeadersWidth = 51;
             feedBackDataGridView.RowTemplate.Height = 25;
-            feedBackDataGridView.Size = new Size(1045, 328);
+            feedBackDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            feedBackDataGridView.Size = new Size(1045, 345);
             feedBackDataGridView.TabIndex = 1;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(857, 138);
-            button1.Name = "button1";
-            button1.Size = new Size(74, 29);
-            button1.TabIndex = 27;
-            button1.Text = "Edit";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(937, 138);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 28;
-            button2.Text = "Remove";
-            button2.UseVisualStyleBackColor = true;
             // 
             // FeedbackView
             // 

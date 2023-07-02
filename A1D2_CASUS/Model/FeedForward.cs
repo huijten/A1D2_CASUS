@@ -27,6 +27,14 @@ namespace A1D2_CASUS.Model
         {
             db.Create(feed);
         }
+        internal void EditFf(int id, FeedBase Feed, string Notes)
+        {
+            db.EditFF(id, Feed, Notes);
+        }
+        internal void DeleteFF(int id)
+        {
+            db.Delfff(id);
+        }
 
         internal DataTable GetDataTables()
         {

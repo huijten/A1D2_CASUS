@@ -69,6 +69,42 @@ namespace A1D2_CASUS.DAO
             }
             catch (SqlException ex) { throw ex; }
         }
+        internal void EditFF(int id, FeedBase Feed, string Notes)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "UPDATE FeedForward SET Feed = @Feed, Notes = @Notes WHERE id = @Id ";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", id);
+                        command.Parameters.AddWithValue("@Feed", Feed.Id);
+                        command.Parameters.AddWithValue("@Notes", Notes);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+        }
+        internal void Delfff(int Id)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "DELETE FeedForward WHERE Id = @Id";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", Id);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+        }
         #endregion
 
         #region Datatable

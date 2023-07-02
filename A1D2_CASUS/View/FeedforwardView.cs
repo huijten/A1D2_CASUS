@@ -109,10 +109,30 @@ namespace A1D2_CASUS.View
             MessageBox.Show("Succesfully Created!");
             LoadDataGrid();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        
+        private void button1_Click_1(object sender, EventArgs e)
         {
+            Assignment asi = new Assignment();
+            FeedForward asignmte = new FeedForward();
+            int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
+            string Notes = notesTxtBox.Text;
+            int a = Int32.Parse(assignmentComboBox.SelectedValue.ToString());
+            Assignment asif = asi.Search(a);
+            FeedBase fb = new FeedBase();
+            FeedBase fbss = fb.SearchByAssignment(a);
+            asignmte.EditFf(id, fbss, Notes);
+            MessageBox.Show("Feed edited!");
+            LoadDataGrid();
+        }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Assignment asi = new Assignment();
+            FeedForward asignmte = new FeedForward();
+            int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
+            asignmte.DeleteFF(id);
+            MessageBox.Show("Feed deleted!");
+            LoadDataGrid();
         }
     }
 }
