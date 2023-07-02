@@ -23,7 +23,7 @@ namespace A1D2_CASUS.View
         private void AssignmentView_Load(object sender, EventArgs e)
         {
             RefreshDGVAs();
-            
+
         }
         public void RefreshDGVAs()
         {
@@ -33,8 +33,8 @@ namespace A1D2_CASUS.View
             DGVAssignment.DataSource = Asgnmt;
             DGVAssignment.ResetBindings();
         }
-        
-#endregion
+
+        #endregion
 
         #region CRud
         private void BTNCreate_Click(object sender, EventArgs e)

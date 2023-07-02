@@ -22,7 +22,10 @@ namespace A1D2_CASUS.Model
             Feed = feed;
             Notes = notes;
         }
-
+        internal void MakeFeedback(FeedBack feeddback)
+        {
+            db.ApplyFeedback(feeddback);
+        }
         internal DataTable Get2d4bAsnmt()
         {
             return db.GetFeedBackDataTable();

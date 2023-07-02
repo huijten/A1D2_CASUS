@@ -52,7 +52,7 @@ namespace A1D2_CASUS.View
         {
             var bind = new BindingSource();
             Student db = new Student();
-            
+
             bind.DataSource = db.GetStudents();
             CBXStudent.DataSource = bind;
             CBXStudent.DisplayMember = "Name";
@@ -62,7 +62,7 @@ namespace A1D2_CASUS.View
         {
             var binda = new BindingSource();
             Supervisor db = new Supervisor();
-            
+
             binda.DataSource = db.GetSupervisors();
             CBXSupervisor.DataSource = binda;
             CBXSupervisor.DisplayMember = "Name";
@@ -78,7 +78,6 @@ namespace A1D2_CASUS.View
             contentLbl.Text = feedBase.Content;
             studentLbl.Text = feedBase.Student.Name;
             assignmentLbl.Text = feedBase.Assignment.Name;
-
         }
 
         private void LoadBtn_Click(object sender, EventArgs e)
@@ -94,15 +93,19 @@ namespace A1D2_CASUS.View
             FeedBase fbb = new FeedBase();
             Student stud = new Student();
             DateTime tijd = DateTime.Now;
-            int ins = Int32.Parse(CBXSupervisor.SelectedValue.ToString()) ;
+            int ins = Int32.Parse(CBXSupervisor.SelectedValue.ToString());
             Supervisor supvis = db.Search(ins);
             int s = Int32.Parse(CBXStudent.SelectedValue.ToString());
             Student stu = stud.Search(s);
-            int a = Int32.Parse (assignmentComboBox.SelectedValue.ToString());
+            int a = Int32.Parse(assignmentComboBox.SelectedValue.ToString());
             Assignment asif = asi.Search(a);
-            FeedBase fb = new FeedBase( tijd,  supvis,
+            FeedBase fb = new FeedBase(tijd, supvis,
             asif, stu, TXTContent.Text);
             fbb.CreateFeedbas(fb);
+            FeedBase fbss = fb.SearchByAssignment(a);
+            FeedBack fdb = new FeedBack(0, fbss, TXTNotes.Text);
+            fdb.MakeFeedback(fdb);
+
         }
 
         private void assignmentComboBox_SelectedIndexChanged(object sender, EventArgs e)

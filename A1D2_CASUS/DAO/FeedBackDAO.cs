@@ -45,7 +45,28 @@ namespace A1D2_CASUS.DAO
             return feedbacks;
         }
         #endregion
+#region CRUD
 
+        internal void ApplyFeedback(FeedBack feedback)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "INSERT INTO FeedBack (Feed, Notes) VALUES (@Feed, @Notes)";
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@Feed", feedback.Feed.Id);
+                        command.Parameters.AddWithValue("@Notes", feedback.Notes);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException ex) { throw ex; }
+        }
+        #endregion
         #region Datatable
         internal DataTable GetFeedBackDataTable()
         {
